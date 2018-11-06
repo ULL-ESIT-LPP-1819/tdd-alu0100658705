@@ -19,4 +19,10 @@ RSpec.describe Prct06 do
 		end
 	end
 
+	describe "# almacenamiento de la cantidad de grasa" do
+		it "Se almacena la cantidad de grasa correctamente" do
+		expect(@galletas.Grasa).to eq("21")
+		end
+	end
+
 end
