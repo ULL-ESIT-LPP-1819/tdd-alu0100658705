@@ -10,7 +10,7 @@ RSpec.describe Prct06 do
 
  	#describe Nutricional do
 	before :each do
-		@galletas = Nutricional.new("Oreo",21,12)
+		@galletas = Nutricional.new("Oreo",21,12,60,31,7.6,1.4)
 	end
 
 	describe "# almacenamiento del Nombre" do
