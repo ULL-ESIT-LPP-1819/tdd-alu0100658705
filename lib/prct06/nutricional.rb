@@ -24,4 +24,9 @@ class Nutricional
 	def Azucares
 		@azucares
 	end
+	
+	def Proteinas
+		@proteinas
+	end
+
 end
