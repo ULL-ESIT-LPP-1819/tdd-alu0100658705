@@ -40,7 +40,7 @@ RSpec.describe Prct06 do
 
 	describe "# almacenamiento de la cantidad de azúcares" do
 		it "Se almacena la cantidad de azúcares correctamente" do
-		expect(@galletas.Azúcares).to eq(31)
+		expect(@galletas.Azucares).to eq(31)
 		end
 	end
 

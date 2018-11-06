@@ -1,8 +1,8 @@
 class Nutricional
-	attr_reader :nombre, :grasa, :grasa_saturada, :hidratos, :azúcares, :proteinas, :sal 
+	attr_reader :nombre, :grasa, :grasa_saturada, :hidratos, :azucares, :proteinas, :sal 
 
-	def initialize(nombre,grasa,grasa_saturada,hidratos,azúcares,proteinas,sal)
-		@nombre, @grasa, @grasa_saturada, @hidratos, @azúcares, @proteinas, @sal  = nombre, grasa, grasa_saturada, hidratos, azúcares, proteinas, sal
+	def initialize(nombre,grasa,grasa_saturada,hidratos,azucares,proteinas,sal)
+		@nombre, @grasa, @grasa_saturada, @hidratos, @azucares, @proteinas, @sal  = nombre, grasa, grasa_saturada, hidratos, azucares, proteinas, sal
 	end
 
 	def Nombre
@@ -19,5 +19,9 @@ class Nutricional
 
 	def Hidratos
 		@hidratos
+	end
+
+	def Azucares
+		@azucares
 	end
 end
