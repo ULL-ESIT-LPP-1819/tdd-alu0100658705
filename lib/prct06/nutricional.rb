@@ -1,0 +1,2 @@
+class Nutricional
+end
