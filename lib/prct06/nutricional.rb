@@ -29,4 +29,7 @@ class Nutricional
 		@proteinas
 	end
 
+	def Sal
+		@sal
+	end
 end
