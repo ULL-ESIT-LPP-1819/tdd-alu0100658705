@@ -16,4 +16,8 @@ class Nutricional
 	def Grasa_saturada
 		@grasa_saturada
 	end
+
+	def Hidratos
+		@hidratos
+	end
 end
