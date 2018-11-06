@@ -30,4 +30,11 @@ RSpec.describe Prct06 do
 		expect(@galletas.Grasa_saturada).to eq(12)
 		end
 	end
+
+	describe "# almacenamiento de la cantidad de hidratos" do
+		it "Se almacena la cantidad de hidratos correctamente" do
+		expect(@galletas.Hidratos).to eq(60)
+		end
+	end	
+
 end
