@@ -50,5 +50,11 @@ RSpec.describe Prct06 do
 		end
 	end
 
+	describe "#almacenamiento de la cantidad de sal" do
+		it "Se almacena correctamente la cantidad de sal" do
+		expect(@galletas.Sal).to eq(1.4)
+		end
+	end
+
 
 end
