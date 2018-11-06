@@ -44,4 +44,11 @@ RSpec.describe Prct06 do
 		end
 	end
 
+	describe "# almacenamiento de la cantidad de proteinas" do
+		it "Se almacena correctamente la cantidad de proteinas" do
+		expect(@galletas.Proteinas).to eq(7.6)
+		end
+	end
+
+
 end
