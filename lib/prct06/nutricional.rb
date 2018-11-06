@@ -38,7 +38,8 @@ class Nutricional
 	end
 
 	producto = Nutricional.new("Bollicao",80,20,100,50,12,3);
-	 
+	
+ 
 	puts "----------------------------------------------"
 	if  producto.grasa > 70
 	puts "Ha superado el valor de Ingesta de Referencia para las grasas" 
@@ -60,10 +61,11 @@ class Nutricional
         puts "Ha superado el valor de Ingesta de Referencia para la sal"
         end
 
-	#if producto.valor_energetico > 8400
-	#puts "Ha superado el valor de Ingesta de Referencia para el valor energético"
-	#end
+	if producto.Valor_energetico > 8400
+	puts "Ha superado el valor de Ingesta de Referencia para el valor energético"
+	end
 
+	
 
 end
 
