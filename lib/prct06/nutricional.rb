@@ -1,12 +1,12 @@
 class Nutricional
-#	attr_reader :nombre
+	attr_reader :nombre
 
-#	def initialize(nombre)
+	def initialize(nombre)
 		@nombre = nombre
-#	end
+	end
 
-#	def Nombre
+	def Nombre
 		@nombre
-#	end
+	end
 
 end
