@@ -10,7 +10,7 @@ RSpec.describe Prct06 do
 
  	#describe Nutricional do
 	before :each do
-		@galletas = Nutricional.new("Oreo")
+		@galletas = Nutricional.new("Oreo",21)
 	end
 
 	describe "# almacenamiento del Nombre" do
@@ -21,7 +21,7 @@ RSpec.describe Prct06 do
 
 	describe "# almacenamiento de la cantidad de grasa" do
 		it "Se almacena la cantidad de grasa correctamente" do
-		expect(@galletas.Grasa).to eq("21")
+		expect(@galletas.Grasa).to eq(21)
 		end
 	end
 
