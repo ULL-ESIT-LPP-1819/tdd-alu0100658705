@@ -65,8 +65,13 @@ class Nutricional
 
 	producto = Nutricional.new("Bollicao",80,20,100,50,12,3);
 	
-	producto.Formatear(producto.grasa,producto.Valor_energetico)
-
+	puts "Valor Energético #{producto.Valor_energetico}"
+	puts "----------------------------------------------"
+	puts "Porcentaje , Calorias"
+	puts "Grasa #{producto.Formatear(producto.grasa,producto.Valor_energetico)}"
+	puts "Hidratos #{producto.Formatear(producto.hidratos,producto.Valor_energetico)}" 
+	puts "Proteina #{producto.Formatear(producto.proteinas,producto.Valor_energetico)}"
+	puts "Sal #{producto.Formatear(producto.sal,producto.Valor_energetico)}"
  
 	puts "----------------------------------------------"
 	if  producto.grasa > 70
