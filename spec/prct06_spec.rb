@@ -57,16 +57,16 @@ RSpec.describe Prct06 do
 
 	describe "# almacenando el valor energético" do
 		it "Se almacena correctamente el valor energético" do
-		expect(@galletas.Valor_energetico).to eq(1961.2)
+		expect(@galletas.Valor_energetico).to eq(1940.2)
 		end
 	end
   
 	describe "# Datos formateados" do
 		it "Datos formateados correctamente" do
-		expect(@galletas.Formatear(@galletas.grasa,@galletas.Valor_energetico)).to eq([0,777])
-		expect(@galletas.Formatear(@galletas.hidratos,@galletas.Valor_energetico)).to eq([0,0])
-		expect(@galletas.Formatear(@galletas.proteinas,@galletas.Valor_energetico)).to eq([0,0])
-		expect(@galetas.Formatear(@galletas.sal,@galletas.Valor_energetico).to eq([0,0])
+		expect(@galletas.Formatear(@galletas.grasa,@galletas.Valor_energetico)).to eq([40.05,777])
+		expect(@galletas.Formatear(@galletas.hidratos,@galletas.Valor_energetico)).to eq([52.57,1020])
+		expect(@galletas.Formatear(@galletas.proteinas,@galletas.Valor_energetico)).to eq([6.66,129.2])
+		expect(@galletas.Formatear(@galletas.sal,@galletas.Valor_energetico)).to eq([1.8,35])
 		end
 	end    	
 end

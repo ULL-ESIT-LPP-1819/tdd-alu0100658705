@@ -34,17 +34,31 @@ class Nutricional
 	end
 
 	def Valor_energetico
-	(@grasa*37)+(@hidratos*17)+(@proteinas*17)+(@sal*25)
+	(@grasa*36)+(@hidratos*17)+(@proteinas*17)+(@sal*25)
 	end
 
 	
 	def Formatear(a,b)
 		if ( a == grasa)
-
 			porc=((a*100*37)/b).round(2)
 			calorias=37*a
 		end
 		
+	       	if ( a == hidratos)
+			porc=((a*100*17)/b).round(2)
+			calorias=17*a
+		end
+
+		if ( a == proteinas)
+			porc=((a*100*17)/b).round(2)
+			calorias=17*a
+		end
+		
+		if (a == sal)
+			porc=((a*100*25)/b).round(2)
+			calorias=25*a
+		end
+
 		return porc, calorias
 	end
 
