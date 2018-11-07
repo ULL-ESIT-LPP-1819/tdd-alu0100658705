@@ -37,8 +37,22 @@ class Nutricional
 	(@grasa*37)+(@hidratos*17)+(@proteinas*17)+(@sal*25)
 	end
 
+	
+	def Formatear(a,b)
+		if ( a == grasa)
+
+			porc=((a*100*37)/b).round(2)
+			calorias=37*a
+		end
+		
+		return porc, calorias
+	end
+
+
 	producto = Nutricional.new("Bollicao",80,20,100,50,12,3);
 	
+	producto.Formatear(producto.grasa,producto.Valor_energetico)
+
  
 	puts "----------------------------------------------"
 	if  producto.grasa > 70
@@ -65,8 +79,8 @@ class Nutricional
 	puts "Ha superado el valor de Ingesta de Referencia para el valor energético"
 	end
 
+		
 	
-
 end
 
 

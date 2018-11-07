@@ -63,10 +63,10 @@ RSpec.describe Prct06 do
   
 	describe "# Datos formateados" do
 		it "Datos formateados correctamente" do
-		expect(@galletas.Formatear.grasa).to eq()
-		expect(@galletas.Formatear.hidratos).to eq()
-		expect(@galletas.Formatear.proteinas).to eq()
-		expect(@galetas.Formatear.sal).to eq()
+		expect(@galletas.Formatear(@galletas.grasa,@galletas.Valor_energetico)).to eq([0,777])
+		expect(@galletas.Formatear(@galletas.hidratos,@galletas.Valor_energetico)).to eq([0,0])
+		expect(@galletas.Formatear(@galletas.proteinas,@galletas.Valor_energetico)).to eq([0,0])
+		expect(@galetas.Formatear(@galletas.sal,@galletas.Valor_energetico).to eq([0,0])
 		end
 	end    	
 end
