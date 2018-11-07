@@ -49,13 +49,13 @@ RSpec.describe Prct06 do
 		end
 	end
 
-	describe "#almacenamiento de la cantidad de sal" do
+	describe "# almacenamiento de la cantidad de sal" do
 		it "Se almacena correctamente la cantidad de sal" do
 		expect(@galletas.Sal).to eq(1.4)
 		end
 	end
 
-	describe "# almacenando el valor energético" do
+	describe "# Cálculo del valor energético" do
 		it "Se almacena correctamente el valor energético" do
 		expect(@galletas.Valor_energetico).to eq(1940.2)
 		end
