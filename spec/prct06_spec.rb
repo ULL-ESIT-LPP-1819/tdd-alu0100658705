@@ -1,4 +1,3 @@
-require 'prct06/nutricional.rb'
 RSpec.describe Prct06 do
   	#it "has a version number" do
     	#expect(Prct06::VERSION).not_to be nil
@@ -62,5 +61,12 @@ RSpec.describe Prct06 do
 		end
 	end
   
-    	
+	describe "# Datos formateados" do
+		it "Datos formateados correctamente" do
+		expect(@galletas.Formatear.grasa).to eq()
+		expect(@galletas.Formatear.hidratos).to eq()
+		expect(@galletas.Formatear.proteinas).to eq()
+		expect(@galetas.Formatear.sal).to eq()
+		end
+	end    	
 end
