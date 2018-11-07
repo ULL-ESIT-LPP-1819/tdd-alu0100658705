@@ -15,7 +15,7 @@ RSpec.describe Prct06 do
 
 	describe "# Mostrar los datos" do
 		it "Se muestran todos los datos" do
-		expect(@galletas.to_s).to eq("Oreo",21,12,60,31,7.6,1.4)
+		expect(@galletas.to_s).to eq("(Oreo,21,12,60,31,7.6,1.4)")
 		end
 	end
 
