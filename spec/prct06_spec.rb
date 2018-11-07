@@ -12,6 +12,13 @@ RSpec.describe Prct06 do
 		@galletas = Nutricional.new("Oreo",21,12,60,31,7.6,1.4)
 	end
 
+
+	describe "# Mostrar los datos" do
+		it "Se muestran todos los datos" do
+		expect(@galletas.to_s).to eq("Oreo",21,12,60,31,7.6,1.4)
+		end
+	end
+
 	describe "# almacenamiento del Nombre" do
 		it "Se almacena el nombre correctamente" do
 		expect(@galletas.Nombre).to eq("Oreo")
