@@ -1,22 +1,11 @@
 RSpec.describe Prct06 do
 	before :each do
 		@galletas = Nutricional.new("Oreo",21,12,60,31,7.6,1.4)
-		@n1=Node.new(@galletas,nil)
-
 		@sardinas = Nutricional.new("Pescamar",15,8,40,5,4.5,3.5)
-		@n2=Node.new(@sardinas,nil)
-
-		@aceitunas = Nutricional.new("Ibarra",16,8,20,12,7,2.8)
-		@n3=Node.new(@aceitunas,nil)
-
+		@aceitunas = Nutricional.new("Ibarra",16,8,20,12,7,2.1)
 		@nutella = Nutricional.new("Nutella",31,11,58,57,6,0.2)
-		@n4=Node.new(@nutella,nil)
-
 		@pechuga = Nutricional.new("Campofrio",1,0.3,4,2,14,1.4)
-		@n5=Node.new(@pechuga,nil)
-
 		@queso = Nutricional.new("Castillo",20,12,4,2,1.5,0.8)
-		@n6=Node.new(@queso,nil)
 	end
 
 	describe "# almacenamiento del Nombre" do
@@ -80,33 +69,17 @@ RSpec.describe Prct06 do
 
 	before :each do
 			
-			@lista=Lista.new()
-			@lista.push(@n1)
-			@lista.push(@n2)
-			@lista.push(@n3)
-			@lista.push(@n4)
-			@lista.push(@n5)
-			@lista.push(@n6)			
+			@lista = Lista.new			
 		end
 
 	
 		describe "# Prueba para Nodo" do
 			it "El Nodo debe existir en la lista" do
-			expect(@lista.head != nil)
+			@lista.push_head(@galletas)
+			expect(@lista.get_value).to eq(@galletas)
 			end
 		end
 
-		describe "#Prueba de ordenación de nodos" do
-			it "El nodo 5 debe ser el primero: mayor cantidad de sal" do
-			expect(@lista.head).to eq(@n2)
-			end
-		end
-
-		describe "#Prueba para extraer un nodo de la lista" do
-			it "Se extrae el primer nodo" do
-			expect(@lista).to respond_to :pop
-			end
-		end
 end
 
 
