@@ -81,27 +81,32 @@ RSpec.describe Prct06 do
 	before :each do
 			
 			@lista=Lista.new()
-			@lista.empujar(@n1)
-			@lista.empujar(@n2)
-			@lista.empujar(@n3)
-			@lista.empujar(@n4)
-			@lista.empujar(@n5)
-			@lista.empujar(@n6)			
+			@lista.push(@n1)
+			@lista.push(@n2)
+			@lista.push(@n3)
+			@lista.push(@n4)
+			@lista.push(@n5)
+			@lista.push(@n6)			
 		end
 
 	
 		describe "# Prueba para Nodo" do
 			it "El Nodo debe existir en la lista" do
-			expect(@lista.cabeza != nil)
+			expect(@lista.head != nil)
 			end
 		end
 
 		describe "#Prueba de ordenación de nodos" do
 			it "El nodo 5 debe ser el primero: mayor cantidad de sal" do
-			expect(@lista.cabeza).to eq(@n2)
+			expect(@lista.head).to eq(@n2)
 			end
 		end
 
+		describe "#Prueba para extraer un nodo de la lista" do
+			it "Se extrae el primer nodo" do
+			expect(@lista).to respond_to :pop
+			end
+		end
 end
 
 
