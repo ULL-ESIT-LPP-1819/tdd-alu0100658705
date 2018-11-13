@@ -7,7 +7,7 @@ RSpec.describe Prct06 do
     	#expect(true).to eq(true)
   	#end
 
- 	#describe Nutricional do
+ 	describe Nutricional do
 	before :each do
 		@galletas = Nutricional.new("Oreo",21,12,60,31,7.6,1.4)
 	end
@@ -75,5 +75,27 @@ RSpec.describe Prct06 do
 		expect(@galletas.Formatear(@galletas.proteinas,@galletas.Valor_energetico)).to eq([6.66,129.2])
 		expect(@galletas.Formatear(@galletas.sal,@galletas.Valor_energetico)).to eq([1.8,35])
 		end
-	end    	
+	end 
+      end	
+
+	# PRÁCTICA 7
+	
+	@nodo1 = Nodo.new(@galletas,nil)
+	@nodo2 = Nodo.new(@galletas,nil)
+
+	describe Lista do
+		before :each do
+			@lista=Lista.new()
+			@lista.empujar(@node1)
+			@lista.empujar(@node2)
+		end		
+	
+		describe "# Prueba para Nodo" do
+			it "El Nodo debe existir en la lista" do
+			expect(@lista.cabeza != nil)
+			end
+		end
+
+	end
+
 end
