@@ -1,15 +1,13 @@
 RSpec.describe Prct06 do
-  	#it "has a version number" do
-    	#expect(Prct06::VERSION).not_to be nil
-  	#end
-
-  	#it "does something useful" do
-    	#expect(true).to eq(true)
-  	#end
 
  	describe Nutricional do
 	before :each do
 		@galletas = Nutricional.new("Oreo",21,12,60,31,7.6,1.4)
+		@sardinas = Nutricional.new("Pescamar",15,8,40,5,4.5,3.5)
+		@aceitunas = Nutricional.new("Ibarra",16,8,20,12,7,2.8)
+		@nutella = Nutricional.new("Nutella",31,11,58,57,6,0.2)
+		@pechuga = Nutricional.new("Campofrio",1,0.3,4,2,14,1.4)
+		@queso = Nutricional.new("Castillo",20,12,4,2,1.5,0.8)
 	end
 
 	describe "# almacenamiento del Nombre" do
@@ -73,14 +71,22 @@ RSpec.describe Prct06 do
 
 	# PRÁCTICA 7
 	
-	@nodo1 = Nodo.new(@galletas,nil)
-	@nodo2 = Nodo.new(@galletas,nil)
-
+	@nodo1 = Node.new(@galletas,nil,nil)
+	@nodo2 = Node.new(@sardinas,nil,nil)
+	@nodo3 = Node.new(@aceitunas,nil,nil)
+	@nodo4 = Node.new(@nutella,nil,nil)
+	@nodo5 = Node.new(@qpechuga,nil,nil)
+	@nodo6 = Node.new(@queso,nil,nil)
+		
 	describe Lista do
 		before :each do
 			@lista=Lista.new()
-			@lista.empujar(@node1)
-			@lista.empujar(@node2)
+			@lista.empujar(@nodo1)
+			@lista.empujar(@nodo2)
+			@lista.empujar(@nodo3)
+			@lista.empujar(@nodo4)
+			@lista.empujar(@nodo5)
+			@lista.empujar(@nodo6)
 		end		
 	
 		describe "# Prueba para Nodo" do
