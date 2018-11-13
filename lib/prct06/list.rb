@@ -1,19 +1,6 @@
-#require_relative 'nutricional'
+require_relative 'nutricional'
 
 Node = Struct.new(:value, :next, :prev)
-
-#Nutricional.new
-
-class Persona
-
-	attr_reader :edad, :sexo, :nombre
-
-	def initialize(edad,sexo,nombre)
-		@edad, @sexo, @nombre = edad,sexo,nombre
-	end
-end
-
-
 
 class Lista
 
@@ -29,10 +16,9 @@ class Lista
 	end
 
 	def mostrar()
-	puts cabeza.value.edad
-	@cabeza=@cabeza.next
-	puts cabeza.value.edad
+		cabeza.value.sal
 	end
+	
 
 	def ordenar()
 	end
@@ -40,18 +26,17 @@ class Lista
 end
 
 
-p1=Persona.new(20,0,"Pablo")
-p2=Persona.new(15,1,"Elena")
-p3=Persona.new(18,0,"Pepe")
+p1=Nutricional.new("tirma",20,15,6,7,8,9)
+p2=Nutricional.new("Elena",10,5,12,6,4,2)
 
 n1=Node.new(p1,nil)
 n2=Node.new(p2,nil)
-n3=Node.new(p3,nil)
+
 
 lista=Lista.new()
 lista.empujar(n1)
 lista.empujar(n2)
-lista.empujar(n3)
 
-lista.mostrar()
+puts lista.cabeza.value.sal
+
 
