@@ -113,6 +113,13 @@ RSpec.describe Prct06 do
 		@lista.push_head(@pechuga)
 		@lista.push_head(@queso)
 
+		describe "#Pruebas para clasificar la lista" do
+			it "El valor es correcto" do
+			expect(@lista.get_value.sal).to eq("Demasiada sal")
+			end
+		end
+
+
 
 end
 
