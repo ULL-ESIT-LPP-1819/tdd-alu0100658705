@@ -5,6 +5,8 @@ class Lista
 		@head = @tail = nil
 	end
 
+# Añadir
+
 	def push_head(value)
 		if @head == nil
 			@head = @Node.new(value, nil, nil)
@@ -26,12 +28,13 @@ class Lista
 		end
 	end	
 
-	
+# Tomar valor: Para valores individuales dentro de la clase Nutricional se llama --> ejemplo: @list1.get.value.sal	
+
 	def get_value
 		return @head.value
 	end
 
-
+# Extaer:
 	
 	def pop_head()
 		if @head == @tail
@@ -52,6 +55,9 @@ class Lista
 			@tail.next = nil
 		end
 	end		
+
+
+# Tomar el siguiente o el anterior
 
 	def get_next
 		return @head.next
