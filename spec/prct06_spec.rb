@@ -1,11 +1,7 @@
 RSpec.describe Prct06 do
+	describe Nutricional do
 	before :each do
 		@galletas = Nutricional.new("Oreo",21,12,60,31,7.6,1.4)
-		@sardinas = Nutricional.new("Pescamar",15,8,40,5,4.5,3.5)
-		@aceitunas = Nutricional.new("Ibarra",16,8,20,12,7,4.3)
-		@nutella = Nutricional.new("Nutella",31,11,58,57,6,0.2)
-		@pechuga = Nutricional.new("Campofrio",1,0.3,4,2,14,3)
-		@queso = Nutricional.new("Castillo",20,12,4,2,1.5,0.8)
 	end
 
 
@@ -73,14 +69,24 @@ RSpec.describe Prct06 do
 		end
 	end 
 
+end
 
+# ------------ PRUEBAS PARA LA PRÁCTICA 7:------------------------------------
+
+	describe Lista do
 	before :each do
+			
+		@galletas = Nutricional.new("Oreo",21,12,60,31,7.6,1.4)
+                @sardinas = Nutricional.new("Pescamar",15,8,40,5,4.5,3.5)
+                @aceitunas = Nutricional.new("Ibarra",16,8,20,12,7,4.3)
+                @nutella = Nutricional.new("Nutella",31,11,58,57,6,0.2)
+                @pechuga = Nutricional.new("Campofrio",1,0.3,4,2,14,3)
+                @queso = Nutricional.new("Castillo",20,12,4,2,1.5,0.8)
+		
 			
 			@lista = Lista.new			
 		end
-
 	
-
 
 		describe "# Prueba para Nodo" do
 			it "El Nodo debe existir en la lista" do
@@ -125,17 +131,27 @@ RSpec.describe Prct06 do
 		end
 
 		describe "#Pruebas para clasificar la lista" do
-			it "El valor es correcto" do
+			it "El valor es correcto para: Poca sal" do
 			expect(@lista1.clasificar).to eq("Poca Sal")
 			end
-		end
+		
 
-			it "Comprobando en los siguientes módulos" do
+			it "El valor es correcto para otro nodo: Sal normal" do
 			@lista1.pop_head()			
 			expect(@lista1.clasificar).to eq("Sal normal")
 			end
 
+			it "El valor es correcto para otro nodo: Mucha sal" do
+			@lista1.pop_head()
+			@lista1.pop_head()
+			@lista1.pop_head()
+			expect(@lista1.clasificar).to eq("Mucha sal")
+			end
 			
+			
+
+		end	
+	end
 end
 
 
