@@ -73,10 +73,33 @@ RSpec.describe Prct06 do
 		end
 
 	
+
+
 		describe "# Prueba para Nodo" do
 			it "El Nodo debe existir en la lista" do
 			@lista.push_head(@galletas)
 			expect(@lista.get_value).to eq(@galletas)
+			end
+		end
+		
+		describe "# Acceder a valores individuales" do
+			it  "Se pueden acceder a los valores del nodo" do
+			@lista.push_head(@sardinas)
+			expect(@lista.get_value.sal).to eq(3.5)
+			end
+		end
+
+		describe "# Los nodos pueden introducirse desde el tail" do
+			it "El nodo debe existir en la lista" do
+			@lista.push_tail(@aceitunas)
+			expect(@lista.get_value).to eq(@aceitunas)
+			end
+		end
+		describe "# Los nodos pueden extraerse desde el tail" do
+			it "El nodo se extrae" do
+			@lista.push_head(@queso)
+			@lista.push_head(@pechuga)
+			expect(@lista.pop_tail().to_s).to eq("Castillo",20,12,4,2,1.5,0.8)
 			end
 		end
 
