@@ -69,10 +69,11 @@ class Lista
 	def clasificar
 		if @head.value.sal < 1
 			return "Poca Sal"
-		if @head.value.sal <= 4 
+		elsif @head.value.sal <= 4 
 			return "Sal normal"
-		if @head.value.sal > 4
+		else @head.value.sal > 4
 			return "Mucha sal"
+		end
 	end
 
 
