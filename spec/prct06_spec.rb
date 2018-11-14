@@ -97,9 +97,10 @@ RSpec.describe Prct06 do
 		end
 		describe "# Los nodos pueden extraerse desde el tail" do
 			it "El nodo se extrae" do
-			@lista.push_head(@queso)
-			@lista.push_head(@pechuga)
-			expect(@lista.pop_tail().to_s).to eq("Castillo",20,12,4,2,1.5,0.8)
+			@lista.push_tail(@queso)
+			@lista.push_tail(@pechuga)
+			@lista.pop_tail()
+			expect(@lista.get_value.nombre).to eq("Castillo")
 			end
 		end
 

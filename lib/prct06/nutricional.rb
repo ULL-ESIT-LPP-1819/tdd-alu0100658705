@@ -5,6 +5,10 @@ class Nutricional
 		@nombre, @grasa, @grasa_saturada, @hidratos, @azucares, @proteinas, @sal  = nombre, grasa, grasa_saturada, hidratos, azucares, proteinas, sal
 	end
 
+	def to_s
+		"(#{@nombre},#{@grasa},#{@grasa_saturada},#{@hidratos},#{@azucares},#{@proteinas},#{@sal})"
+	end
+
 	def Nombre
 		@nombre
 	end
