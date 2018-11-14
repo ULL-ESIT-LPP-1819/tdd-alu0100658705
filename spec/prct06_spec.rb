@@ -2,9 +2,9 @@ RSpec.describe Prct06 do
 	before :each do
 		@galletas = Nutricional.new("Oreo",21,12,60,31,7.6,1.4)
 		@sardinas = Nutricional.new("Pescamar",15,8,40,5,4.5,3.5)
-		@aceitunas = Nutricional.new("Ibarra",16,8,20,12,7,2.1)
+		@aceitunas = Nutricional.new("Ibarra",16,8,20,12,7,4.3)
 		@nutella = Nutricional.new("Nutella",31,11,58,57,6,0.2)
-		@pechuga = Nutricional.new("Campofrio",1,0.3,4,2,14,1.4)
+		@pechuga = Nutricional.new("Campofrio",1,0.3,4,2,14,3)
 		@queso = Nutricional.new("Castillo",20,12,4,2,1.5,0.8)
 	end
 
@@ -111,6 +111,31 @@ RSpec.describe Prct06 do
 			end
 		end
 
+		# PRUEBAS PARA CLASIFICAR LA LISTA DE ETIQUETAS SEGÚN LOS GRAMOS DE SAL
+
+	before :each do
+		@lista1=Lista.new()		
+
+		@lista1.push_head(@galletas)
+		@lista1.push_head(@sardinas)
+		@lista1.push_head(@aceitunas)
+		@lista1.push_head(@nutella)
+		@lista1.push_head(@pechuga)
+		@lista1.push_head(@queso)
+		end
+
+		describe "#Pruebas para clasificar la lista" do
+			it "El valor es correcto" do
+			expect(@lista1.clasificar).to eq("Poca Sal")
+			end
+		end
+
+			it "Comprobando en los siguientes módulos" do
+			@lista1.pop_head()			
+			expect(@lista1.clasificar).to eq("Sal normal")
+			end
+
+			
 end
 
 

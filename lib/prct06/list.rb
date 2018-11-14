@@ -58,6 +58,26 @@ class Lista
 		end
 	end		
 
+	def get_next
+		return @head.next
+	end
+
+	def get_prev
+		return @head.prev
+	end
+
+	def clasificar
+		if @head.value.sal < 1
+			return "Poca Sal"
+		elsif @head.value.sal <= 4 
+			return "Sal normal"
+		else @head.value.sal > 4
+			return "Mucha sal"
+		end
+	end
+
+
+
 end
 
 
