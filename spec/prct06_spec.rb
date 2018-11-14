@@ -1,15 +1,11 @@
 RSpec.describe Prct06 do
-  	#it "has a version number" do
-    	#expect(Prct06::VERSION).not_to be nil
-  	#end
-
-  	#it "does something useful" do
-    	#expect(true).to eq(true)
-  	#end
-
- 	describe Nutricional do
 	before :each do
 		@galletas = Nutricional.new("Oreo",21,12,60,31,7.6,1.4)
+		@sardinas = Nutricional.new("Pescamar",15,8,40,5,4.5,3.5)
+		@aceitunas = Nutricional.new("Ibarra",16,8,20,12,7,2.1)
+		@nutella = Nutricional.new("Nutella",31,11,58,57,6,0.2)
+		@pechuga = Nutricional.new("Campofrio",1,0.3,4,2,14,1.4)
+		@queso = Nutricional.new("Castillo",20,12,4,2,1.5,0.8)
 	end
 
 
@@ -76,26 +72,45 @@ RSpec.describe Prct06 do
 		expect(@galletas.Formatear(@galletas.sal,@galletas.Valor_energetico)).to eq([1.8,35])
 		end
 	end 
-      end	
 
-	# PRÁCTICA 7
-	
-	@nodo1 = Nodo.new(@galletas,nil)
-	@nodo2 = Nodo.new(@galletas,nil)
 
-	describe Lista do
-		before :each do
-			@lista=Lista.new()
-			@lista.empujar(@node1)
-			@lista.empujar(@node2)
-		end		
+	before :each do
+			
+			@lista = Lista.new			
+		end
+
 	
+
+
 		describe "# Prueba para Nodo" do
 			it "El Nodo debe existir en la lista" do
-			expect(@lista.cabeza != nil)
+			@lista.push_head(@galletas)
+			expect(@lista.get_value).to eq(@galletas)
+			end
+		end
+		
+		describe "# Acceder a valores individuales" do
+			it  "Se pueden acceder a los valores del nodo" do
+			@lista.push_head(@sardinas)
+			expect(@lista.get_value.sal).to eq(3.5)
 			end
 		end
 
-	end
+		describe "# Los nodos pueden introducirse desde el tail" do
+			it "El nodo debe existir en la lista" do
+			@lista.push_tail(@aceitunas)
+			expect(@lista.get_value).to eq(@aceitunas)
+			end
+		end
+		describe "# Los nodos pueden extraerse desde el tail" do
+			it "El nodo se extrae" do
+			@lista.push_tail(@queso)
+			@lista.push_tail(@pechuga)
+			@lista.pop_tail()
+			expect(@lista.get_value.nombre).to eq("Castillo")
+			end
+		end
 
 end
+
+

@@ -1,19 +1,64 @@
-#require_relative 'nutricional'
+require_relative 'nutricional'
 
-Nodo = Struct.new(:value, :next, :prev)
-
-#Nutricional.new
 
 class Lista
 
-	attr_accessor :cabeza
+	attr_accessor :node
+	
+	def initialize()
+		@Node = Struct.new(:value, :next, :prev)
+		@head = @tail = nil
+	end
 
-	def empujar(nodo)
-		if @cabeza == nil
-			@cabeza = nodo
+	def push_head(value)
+		if @head == nil
+			@head = @Node.new(value, nil, nil)
+			@tail = @head
 		else
-			nodo.next=@cabeza
-			@cabeza = nodo
+			@head.prev=@Node.new(value, @head, nil)
+			@head = @head.prev
 		end
 	end
+	
+	
+	def push_tail(value)
+		if @head == nil
+			@head = @Node.new(value, nil, nil)
+		   	@tail = @head
+		else
+			@tail.next = @Node.new(value, nil, @tail)
+			@tail = @tail.next
+		end
+	end	
+
+	
+	def get_value
+		return @head.value
+	end
+
+
+	
+	def pop_head()
+		if @head == @tail
+			@head, @tail = nil
+		else
+			@head = @head.next
+			@head.prev = nil
+		end
+		@head.value
+	
+	end
+	
+	def pop_tail()
+		if @head == @tail
+			@head, @tail = nil
+		else
+			@tail=@tail.prev
+			@tail.next = nil
+		end
+	end		
+
 end
+
+
+

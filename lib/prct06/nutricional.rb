@@ -8,8 +8,12 @@ class Nutricional
 	def to_s
 		"(#{@nombre},#{@grasa},#{@grasa_saturada},#{@hidratos},#{@azucares},#{@proteinas},#{@sal})"
 	end
+<<<<<<< HEAD
 	
 	
+=======
+
+>>>>>>> desarrollo
 	def Nombre
 		@nombre
 	end
@@ -106,5 +110,6 @@ class Nutricional
 		
 	
 end
+
 
 
