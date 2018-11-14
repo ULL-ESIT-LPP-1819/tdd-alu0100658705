@@ -104,6 +104,16 @@ RSpec.describe Prct06 do
 			end
 		end
 
+		# PRUEBAS PARA CLASIFICAR LA LISTA DE ETIQUETAS SEGÚN LOS GRAMOS DE SAL
+
+		@lista.push_head(@galletas)
+		@lista.push_head(@sardinas)
+		@lista.push_head(@aceitunas)
+		@lista.push_head(@nutella)
+		@lista.push_head(@pechuga)
+		@lista.push_head(@queso)
+
+
 end
 
 
