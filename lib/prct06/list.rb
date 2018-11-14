@@ -48,7 +48,15 @@ class Lista
 		@head.value
 	
 	end
-			
+	
+	def pop_tail()
+		if @head == @tail
+			@head, @tail = nil
+		else
+			@tail=@tail.prev
+			@tail.next = nil
+		end
+	end		
 
 end
 
