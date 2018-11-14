@@ -129,13 +129,17 @@ end
 		@lista1.push_head(@pechuga)
 		@lista1.push_head(@queso)
 		end
+		
 
 		describe "#Pruebas para clasificar la lista" do
 			it "El valor es correcto para: Poca sal" do
 			expect(@lista1.clasificar).to eq("Poca Sal")
 			end
 		
-
+			it "Implementando el to_" do
+			expect(@lista1.get_value.to_s).to eq(@queso.to_s)
+			end
+			
 			it "El valor es correcto para otro nodo: Sal normal" do
 			@lista1.pop_head()			
 			expect(@lista1.clasificar).to eq("Sal normal")

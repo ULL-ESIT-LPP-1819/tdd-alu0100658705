@@ -1,9 +1,4 @@
-require_relative 'nutricional'
-
-
 class Lista
-
-	attr_accessor :node
 	
 	def initialize()
 		@Node = Struct.new(:value, :next, :prev)
