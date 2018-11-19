@@ -95,7 +95,7 @@ end
 RSpec.describe Pacientes do
 	context "Almacenamiento de los datos para un paciente" do
 		it "Se almacenan correctamente los datos" do
-		@paciente1 = Paciente.new(70,1.80,26,1,[70.5,71],[85,86],[300,305,320],[400,402,405],[400,412,300],[600,610,605])
+		@paciente1 = Pacientes.new("Pablo",26,1,70,1.80,[70.5,71],[85,86],[300,305,320],[400,402,405],[400,412,300],[600,610,605])
 		expect(@paciente1.peso).to eq(70)
 		end 
 	end
