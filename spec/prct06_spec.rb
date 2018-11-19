@@ -117,6 +117,11 @@ end
 			end
 		end
 
+
+		
+
+
+
 		# PRUEBAS PARA CLASIFICAR LA LISTA DE ETIQUETAS SEGÚN LOS GRAMOS DE SAL
 
 	before :each do
