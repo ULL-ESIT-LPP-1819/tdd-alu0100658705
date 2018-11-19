@@ -57,7 +57,7 @@ end
 
 RSpec.describe Individuo do
 	context "# Almacenamiento de los datos para Individuo" do
-		it "Se almacenan correctamente lod datos" do
+		it "Se almacenan correctamente los datos" do
 		p1 = Individuo.new("Pablo",26,1)
 		expect(p1.nombre).to eq("Pablo")
 		end

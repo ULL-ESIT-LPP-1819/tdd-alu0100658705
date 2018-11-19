@@ -52,6 +52,12 @@ guard :rspec, cmd: "bundle exec rspec" do
   ruby = dsl.ruby
   dsl.watch_spec_files_for(ruby.lib_files)
 
+  # Mis archivos
+  watch(%r{^spec/.+_spec\.rb$})
+  watch(%r{^lib/prct06/(.+)\.rb$})
+
+
+
   # Rails files
   rails = dsl.rails(view_extensions: %w(erb haml slim))
   dsl.watch_spec_files_for(rails.app_files)
