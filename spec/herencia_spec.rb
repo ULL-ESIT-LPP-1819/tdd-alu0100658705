@@ -94,9 +94,41 @@ end
 
 RSpec.describe Pacientes do
 	context "Almacenamiento de los datos para un paciente" do
-		it "Se almacenan correctamente los datos" do
+		before :each do
 		@paciente1 = Pacientes.new("Pablo",26,1,70,1.80,[70.5,71],[85,86],[300,305,320],[400,402,405],[400,412,300],[600,610,605])
-		expect(@paciente1.peso).to eq(70)
+		end
+	it "Se almacenan los datos correctamente" do
+		expect(@paciente1.to_s).to eq("Pablo",26,1,70,1.80,[70.5,71],[85,86],[300,305,320],[400,402,405],[400,412,300],[600,610,605]) 
 		end 
 	end
+
+	context "# Herencia" do
+		before :each do
+		@paciente1 = Pacientes.new("Pablo",26,1,70,1.80,[70.5,71],[85,86],[300,305,320],[400,402,405],[400,412,300],[600,610,605])
+		end
+
+	it "un objeto paciente es una instancia de la clase Paciente" do
+		expect(@paciente1).to be_an_instance_of(Pacientes)
+	end
+
+	it "un objeto paciente no es una instancia de la clase Individuo" do
+		expect(@paciente1).not_to be_an_instance_of(Individuo)
+	end
+
+	it "un objeto paciente no es una instancia de la clase Object" do
+		expect(@paciente1).not_to be_an_instance_of(Object)
+	end
+
+	it "un paciente es un Paciente" do
+		expect(@paciente1).to be_a_kind_of(Pacientes)
+	end
+
+	it "un paciente es un Individuo" do
+		expect(@paciente1).to be_a_kind_of(Individuo)
+	end
+
+	it "un paciente es un Objeto" do
+		expect(@paciente1).to be_a_kind_of(Object)
+	end
+end		
 end
