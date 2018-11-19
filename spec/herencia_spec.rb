@@ -58,8 +58,37 @@ end
 RSpec.describe Individuo do
 	context "# Almacenamiento de los datos para Individuo" do
 		it "Se almacenan correctamente los datos" do
-		p1 = Individuo.new("Pablo",26,1)
-		expect(p1.nombre).to eq("Pablo")
+		@p1 = Individuo.new("Pablo",26,1)
+		expect(@p1.nombre).to eq("Pablo")
 		end
 	end
+
+	context "# Herencia" do
+		before :each do
+		@p1 = Individuo.new("Pablo",26,1)
+		end
+
+	it "un objeto individuo es una instancia de la clase individuo" do
+	expect(@p1).to be_an_instance_of(Individuo)
+	end
+
+	it "un objeto individuo es un Individuo" do
+	expect(@p1).to be_a_kind_of(Individuo)
+	end
+
+	it "un individuo es un Object" do
+	expect(@p1).to be_a_kind_of(Object)
+	end
 end
+
+	context "# Tipo" do
+		before :each do
+			@p1 = Individuo.new("Pablo",26,1)
+		end
+
+	it "Un objeto individuo responde a los métodos nombre, edad, sexo" do
+		expect(@p1).to respond_to(:nombre, :edad, :sexo)
+	end
+end
+end
+
