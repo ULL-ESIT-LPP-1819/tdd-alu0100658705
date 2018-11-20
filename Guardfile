@@ -54,9 +54,7 @@ guard :rspec, cmd: "bundle exec rspec" do
 
   # Mis archivos
   watch(%r{^spec/.+_spec\.rb$})
-  watch(%r{^lib/prct06/(.+)\.rb$})
-
-
+  watch(%r{^lib/prct06/(.+)\.rb$}) { |m| "spec/#{m[1]}_spec.rb" }  
 
   # Rails files
   rails = dsl.rails(view_extensions: %w(erb haml slim))

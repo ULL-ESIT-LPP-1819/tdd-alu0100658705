@@ -4,6 +4,7 @@ class Pacientes < Individuo
 	def initialize(nombre,edad,sexo,peso,talla,cintura,cadera,tricipital,bicipital,subescapular,suprailiaco)	
 		super(nombre,edad,sexo)
 		@peso, @talla, @cintura, @cadera, @tricipital, @bicipital, @subescapular, @suprailiaco = peso, talla, cintura, cadera, tricipital, bicipital, subescapular, suprailiaco
+	
 	end
 
 	def to_s
@@ -16,18 +17,18 @@ class Pacientes < Individuo
 	end
 
 	def imc
-	(@pseo/(@talla*@talla)).round(2)
-	end
+	@indice=(@peso/(@talla*@talla)).round(2)
 
-	def clasificar
-		if @head.value.imc < 30
-			return "No está en tratamiento"
-		elsif @head.value.imc <= 34.9
-			return "Tratamiento para obesidad tipo 1"
-		elsif @head.value.imc <= 39.9
-			return "Tratamiento para obesidad tipo 2"
-		else @head.value.imc > 40 
-			return "Tratamiento para obesidad tipo 3"
+		if @indice < 18.5
+			return "#{@indice}, No está en tratamiento y está delgado"
+		elsif @indice <= 24.9
+			return "#{@indice}, No está en tratamiento y su peso es adecuado"
+		elsif @indice <= 34.9
+			return "#{@indice}, Tratamiento para obesidad tipo 1"
+		elsif @indice <= 39.9
+			return "#{@indice}, Tratamiento para obesidad tipo 2"
+		else @indice > 40 
+			return "#{@indice}, Tratamiento para obesidad tipo 3"
 		end
 	end
 

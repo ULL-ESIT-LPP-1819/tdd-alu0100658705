@@ -134,14 +134,67 @@ RSpec.describe Pacientes do
 end
 	context "# tipo" do
 		before :each do
-		@paciente1= Pacientes.new("Pablo",26,1,70,1.80,[70.5,71],[85,86],[300,305,320],[400,402,405],[400.412,300],[600,610,605])
+		@paciente1= Pacientes.new("Pablo",26,1,70,1.80,[70.5,71],[85,86],[300,305,320],[400,402,405],[400,412,300],[600,610,605])
 		end
 		
 		it "un objeto paciente responde al método imc" do
 			expect(@paciente1).to respond_to(:imc)
 		end
 
-		it "un objeto paciente responde al método clasificar" do
-			expect(@paciente1).to respond_to(:clasificar)
-end		end
+end
+end		
+
+
+		
+RSpec.describe Lista do
+	before :each do
+
+		@paciente1 = Pacientes.new("Pablo",26,1,70,1.80,[70.5,71],[85,86],[300,305,320],[400,402,405],[400,412,300],[600,610,605])
+		@paciente2 = Pacientes.new("Manolo",42,1,88,1.60,[90.2,90,4],[90,90.2],[0,0,0],[0,0,0],[0,0,0],[0,0,0])
+		@paciente3 = Pacientes.new("Antonio",35,1,120,1.78,[0,0],[0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0])
+		@paciente4 = Pacientes.new("Saray",27,0,125,1.55,[0,0],[0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0])
+		@paciente5 = Pacientes.new("Carolina",22,0,45,1.60,[0,0],[0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0])
+				
+		@lista = Lista.new
+
+		@lista.push_head(@paciente1)
+		@lista.push_head(@paciente2)
+		@lista.push_head(@paciente3)
+		@lista.push_head(@paciente4)	
+		@lista.push_head(@paciente5)
+		end	
+
+	context "# Pruebas para clasificar según imc" do
+		
+		it "el paciente 1 no encuentra en tratamiento" do
+			expect(@lista.get_value.imc).to eq("17.58, No está en tratamiento y está delgado")
+		end
+
+		it "el paciente 2 se encuentra en tratamiento para obesidad tipo 3" do
+			@lista.pop_head()
+			expect(@lista.get_value.imc).to eq("52.03, Tratamiento para obesidad tipo 3")
+		end
+
+		it "el paciente 3 se encuentra en tratamiento para obesidad tipo 2" do
+			@lista.pop_head()
+			@lista.pop_head()
+			expect(@lista.get_value.imc).to eq("37.87, Tratamiento para obesidad tipo 2")
+		end
+
+		it "el paciente 4 se encuentra en tratamiento para obesidad tipo 1" do
+			@lista.pop_head()
+			@lista.pop_head()
+			@lista.pop_head()
+			expect(@lista.get_value.imc).to eq("34.37, Tratamiento para obesidad tipo 1")
+		end
+
+		it "el paciente 5 no se encuentra en tratamiento pero está delgado" do
+			@lista.pop_head()
+			@lista.pop_head()
+			@lista.pop_head()
+			@lista.pop_head()
+			expect(@lista.get_value.imc).to eq("21.6, No está en tratamiento y su peso es adecuado")
+		end
+end
+					
 end

@@ -1,8 +1,14 @@
-# Prct06
+# Prct06, 07 Y 08
 
 # Gema para la práctica 6 de LPP. Etiqueta de Información Nutricional con TDD.
 
 # Contenido:
+
+	# - pacientes.rb e individuos.rb 	
+
+	# - list.rb --> practica 7	
+
+	# - herencia_spec.rb	
 
 	# - prct06_spec.rb
 
