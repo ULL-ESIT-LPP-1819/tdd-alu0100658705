@@ -130,5 +130,18 @@ RSpec.describe Pacientes do
 	it "un paciente es un Objeto" do
 		expect(@paciente1).to be_a_kind_of(Object)
 	end
-end		
+
+end
+	context "# tipo" do
+		before :each do
+		@paciente1= Pacientes.new("Pablo",26,1,70,1.80,[70.5,71],[85,86],[300,305,320],[400,402,405],[400.412,300],[600,610,605])
+		end
+		
+		it "un objeto paciente responde al método imc" do
+			expect(@paciente1).to respond_to(:imc)
+		end
+
+		it "un objeto paciente responde al método clasificar" do
+			expect(@paciente1).to respond_to(:clasificar)
+end		end
 end
