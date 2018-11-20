@@ -98,7 +98,7 @@ RSpec.describe Pacientes do
 		@paciente1 = Pacientes.new("Pablo",26,1,70,1.80,[70.5,71],[85,86],[300,305,320],[400,402,405],[400,412,300],[600,610,605])
 		end
 	it "Se almacenan los datos correctamente" do
-		expect(@paciente1.to_s).to eq("Pablo",26,1,70,1.80,[70.5,71],[85,86],[300,305,320],[400,402,405],[400,412,300],[600,610,605]) 
+		expect(@paciente1.to_s).to eq("(( Pablo,26,1 ),70,1.8,[70.5, 71],[85, 86],[300, 305, 320],[400, 402, 405],[400, 412, 300],[600, 610, 605])")
 		end 
 	end
 
