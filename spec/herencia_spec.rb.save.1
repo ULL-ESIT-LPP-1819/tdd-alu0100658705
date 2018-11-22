@@ -169,7 +169,7 @@ RSpec.describe Lista do
 		expect(@lista).to be_an_instance_of(Lista)
 		end
 		it "un objeto lista no es una instancia de la clase Individuo" do
-		expect(@lista).not_to be_an_instance_of(Individuo)
+		exect(@lista).not_to be_an_instance_of(Individuo)
 		end
 		it "un objeto lista es una Lista" do	
 		expect(@lista).to be_a_kind_of(Lista)
@@ -180,17 +180,13 @@ RSpec.describe Lista do
 		it "un objeto lista es un BasicObject" do
 		expect(@lista).to be_a_kind_of(BasicObject)
 		end
-
 	end
 
 	context "# Tipo" do
-		it " un objeto lista responde al método pop_head" do
-		expect(@lista).to respond_to(:pop_head)
+		it "un objeto lista responde al método push_head" do
+		expect(@lista).to respond_to(:push_head)
 		end
-		it "un objeto lista responde al método push_tail" do
-		expect(@lista).to respond_to(:push_tail)
-		end
-	end
+		it "un objeto lista responde al m
 
 	context "# Pruebas para clasificar según imc" do
 		
