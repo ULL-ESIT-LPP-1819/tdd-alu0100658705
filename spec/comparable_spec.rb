@@ -39,7 +39,7 @@ RSpec.describe Pacientes do
 
 	context"# Comparaciones entre individuos" do
 
-		it "La edad del paciente 1 no es mayor que la del paciente 2" do
+		it "Comparar LA EDAD del paciente 1 no es mayor que la del paciente 2" do
 		expect(@p1 >= @p2).to be false
 		end
 		it "La edad del paciente 1 es menor que la del paciente 2" do
