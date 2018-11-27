@@ -1,5 +1,6 @@
 class Nutricional
-	attr_reader :nombre, :grasa, :grasa_saturada, :hidratos, :azucares, :proteinas, :sal 
+	include Comparable
+	attr_reader :nombre, :grasa, :grasa_saturada, :hidratos, :azucares, :proteinas, :sal, :valor_energetico 
 
 	def initialize(nombre,grasa,grasa_saturada,hidratos,azucares,proteinas,sal)
 		@nombre, @grasa, @grasa_saturada, @hidratos, @azucares, @proteinas, @sal  = nombre, grasa, grasa_saturada, hidratos, azucares, proteinas, sal
@@ -38,7 +39,8 @@ class Nutricional
 	end
 
 	def Valor_energetico
-	(@grasa*36)+(@hidratos*17)+(@proteinas*17)+(@sal*25)
+		
+		@valor_energetico=((@grasa*36)+(@hidratos*17)+(@proteinas*17)+(@sal*25))
 	end
 
 	
@@ -65,6 +67,11 @@ class Nutricional
 
 		return porc, calorias
 	end
+
+	def <=>(other)
+		return nil unless other.is_a? Nutricional
+		grasa <=> other.grasa
+	end	
 
 
 	producto = Nutricional.new("Bollicao",80,20,100,50,12,3);
