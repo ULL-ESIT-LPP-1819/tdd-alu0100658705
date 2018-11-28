@@ -1,5 +1,5 @@
 class Lista
-	
+	include Enumerable	
 	def initialize()
 		@Node = Struct.new(:value, :next, :prev)
 		@head = @tail = nil
@@ -78,6 +78,20 @@ class Lista
 	end
 
 
+	def each 
+		iterator = @head
+		while !iterator.nil?
+			yield iterator[:value]
+				iterator = iterator[:next]
+		end
+	end
+
+
+	def insert(others)
+		for i in (0.. others.size-1)
+		push_tail(others[i])
+		end
+	end
 
 end
 

@@ -31,5 +31,10 @@ class Pacientes < Individuo
 			return "#{@indice}, Tratamiento para obesidad tipo 3"
 		end
 	end
+	
+	def get_imc
+		(@peso/(@talla*@talla)).round(2)
+	end
+		
 
 end
