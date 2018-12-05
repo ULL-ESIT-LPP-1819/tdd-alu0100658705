@@ -1,0 +1,20 @@
+Thu, 29 Nov 2018 00:41:46 +0000
+./lib/prct06/pacientes.rb	Wed, 28 Nov 2018 21:20:45 +0000
+./lib/prct06/nutricional.rb	Wed, 28 Nov 2018 21:20:45 +0000
+./lib/prct06/list.rb	Wed, 28 Nov 2018 21:20:45 +0000
+./lib/prct06/version.rb	Sun, 04 Nov 2018 18:38:39 +0000
+./lib/prct06/individuos.rb	Wed, 28 Nov 2018 21:20:45 +0000
+./lib/prct06.rb	Tue, 20 Nov 2018 00:18:08 +0000
+./prct06.gemspec	Tue, 20 Nov 2018 00:18:08 +0000
+./Gemfile	Sun, 04 Nov 2018 18:38:39 +0000
+./Guardfile	Tue, 20 Nov 2018 18:23:22 +0000
+./README.md	Thu, 29 Nov 2018 00:24:02 +0000
+./Gemfile.lock	Tue, 20 Nov 2018 00:18:08 +0000
+./bin/setup	Sun, 04 Nov 2018 18:38:39 +0000
+./bin/console	Sun, 04 Nov 2018 18:38:39 +0000
+./Rakefile	Sun, 04 Nov 2018 18:38:39 +0000
+./spec/herencia_spec.rb	Thu, 22 Nov 2018 14:29:39 +0000
+./spec/prct06_spec.rb	Tue, 20 Nov 2018 00:18:08 +0000
+./spec/enumerable_spec.rb	Wed, 28 Nov 2018 21:20:45 +0000
+./spec/spec_helper.rb	Sun, 04 Nov 2018 18:38:39 +0000
+./spec/comparable_spec.rb	Wed, 28 Nov 2018 21:20:45 +0000
