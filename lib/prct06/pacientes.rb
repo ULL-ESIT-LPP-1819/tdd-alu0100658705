@@ -7,6 +7,7 @@ class Pacientes < Individuo
 	
 	end
 
+	# Método to_s para agrupar las variables definidas en Pacientes y las heredadas de Individuos
 	def to_s
 
 	s = "("
@@ -16,6 +17,8 @@ class Pacientes < Individuo
 	
 	end
 
+
+	# Método para hallar y clasificar el índice de masa corporal
 	def imc
 	@indice=(@peso/(@talla*@talla)).round(2)
 

@@ -373,7 +373,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Método para comparar etiquetas.</p>
+</div></span>
   
 </li>
 
@@ -417,7 +419,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Obtener una etiqueta formateada.</p>
+</div></span>
   
 </li>
 
@@ -619,7 +623,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Métodos para hallar el valor energético.</p>
+</div></span>
   
 </li>
 
@@ -1037,24 +1043,35 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Método para comparar etiquetas</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-71
-72
 73
-74</pre>
+74
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/nutricional.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/nutricional.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='op'>&lt;=&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
-	<span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'><span class='object_link'><a href="" title="Nutricional (class)">Nutricional</a></span></span>
-	<span class='id identifier rubyid_grasa'>grasa</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_grasa'>grasa</span>
-<span class='kw'>end</span></pre>
+	<span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'><span class='object_link'><a href="" title="Nutricional (class)">Nutricional</a></span></span> <span class='comment'>#Devuelve un &quot;nil&quot; si no pertece a nutricional
+</span>	<span class='id identifier rubyid_grasa'>grasa</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_grasa'>grasa</span> <span class='comment'># Compara en función de la cantidad de grasa
+</span><span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1099,13 +1116,23 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Obtener una etiqueta formateada</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-47
 48
 49
 50
@@ -1127,10 +1154,11 @@
 66
 67
 68
-69</pre>
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/nutricional.rb', line 47</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/nutricional.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='const'>Formatear</span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span>
 	<span class='kw'>if</span> <span class='lparen'>(</span> <span class='id identifier rubyid_a'>a</span> <span class='op'>==</span> <span class='id identifier rubyid_grasa'>grasa</span><span class='rparen'>)</span>
@@ -1379,19 +1407,30 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Métodos para hallar el valor energético</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-41
 42
 43
-44</pre>
+44
+45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/nutricional.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/nutricional.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='const'>Valor_energetico</span>
 	
@@ -1407,7 +1446,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Dec  5 09:35:14 2018 by
+  Generated on Wed Dec  5 11:53:48 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

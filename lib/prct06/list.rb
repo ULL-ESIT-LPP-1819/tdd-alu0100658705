@@ -5,7 +5,7 @@ class Lista
 		@head = @tail = nil
 	end
 
-# Añadir
+# Métodos para añadir elementos a la lista:
 
 	def push_head(value)
 		if @head == nil
@@ -34,7 +34,7 @@ class Lista
 		return @head.value
 	end
 
-# Extaer:
+# Métodos para extaer elementos de la lista:
 	
 	def pop_head()
 		if @head == @tail
@@ -67,6 +67,7 @@ class Lista
 		return @head.prev
 	end
 
+# Método para clasificar según la sal:
 	def clasificar
 		if @head.value.sal < 1
 			return "Poca Sal"
@@ -77,7 +78,7 @@ class Lista
 		end
 	end
 
-
+# Iterador para enumerable:
 	def each 
 		iterator = @head
 		while !iterator.nil?
@@ -86,7 +87,7 @@ class Lista
 		end
 	end
 
-
+# Método para insertar varios elementos de forma simultanea en la lista:
 	def insert(others)
 		for i in (0.. others.size-1)
 		push_tail(others[i])

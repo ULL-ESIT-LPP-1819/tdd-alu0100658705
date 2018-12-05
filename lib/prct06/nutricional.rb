@@ -38,12 +38,13 @@ class Nutricional
 		@sal
 	end
 
+	# Métodos para hallar el valor energético
 	def Valor_energetico
 		
 		@valor_energetico=((@grasa*36)+(@hidratos*17)+(@proteinas*17)+(@sal*25))
 	end
 
-	
+	# Obtener una etiqueta formateada
 	def Formatear(a,b)
 		if ( a == grasa)
 			porc=((a*100*37)/b).round(2)
@@ -68,12 +69,14 @@ class Nutricional
 		return porc, calorias
 	end
 
+	# Método para comparar etiquetas
 	def <=>(other)
-		return nil unless other.is_a? Nutricional
-		grasa <=> other.grasa
+		return nil unless other.is_a? Nutricional #Devuelve un "nil" si no pertece a nutricional
+		grasa <=> other.grasa # Compara en función de la cantidad de grasa
 	end	
 
 
+	# Ejemplo para la comprobación de los métodos
 	producto = Nutricional.new("Bollicao",80,20,100,50,12,3);
 	
 	puts "Valor Energético #{producto.Valor_energetico}"

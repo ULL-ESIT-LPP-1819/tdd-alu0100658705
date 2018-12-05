@@ -136,7 +136,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Método para clasificar según la sal:.</p>
+</div></span>
   
 </li>
 
@@ -158,7 +160,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Iterador para enumerable:.</p>
+</div></span>
   
 </li>
 
@@ -277,7 +281,9 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Método para insertar varios elementos de forma simultanea en la lista:.</p>
+</div></span>
   
 </li>
 
@@ -300,7 +306,7 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Extaer:.</p>
+<p>Métodos para extaer elementos de la lista:.</p>
 </div></span>
   
 </li>
@@ -346,7 +352,7 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Añadir.</p>
+<p>Métodos para añadir elementos a la lista:.</p>
 </div></span>
   
 </li>
@@ -440,13 +446,23 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Método para clasificar según la sal:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-70
 71
 72
 73
@@ -454,10 +470,11 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
 75
 76
 77
-78</pre>
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clasificar'>clasificar</span>
 	<span class='kw'>if</span> <span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_sal'>sal</span> <span class='op'>&lt;</span> <span class='int'>1</span>
@@ -482,22 +499,33 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Iterador para enumerable:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-81
 82
 83
 84
 85
 86
-87</pre>
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each'>each</span> 
 	<span class='id identifier rubyid_iterator'>iterator</span> <span class='op'>=</span> <span class='ivar'>@head</span>
@@ -633,20 +661,31 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Método para insertar varios elementos de forma simultanea en la lista:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-90
 91
 92
 93
-94</pre>
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 90</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 91</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_insert'>insert</span><span class='lparen'>(</span><span class='id identifier rubyid_others'>others</span><span class='rparen'>)</span>
 	<span class='kw'>for</span> <span class='id identifier rubyid_i'>i</span> <span class='kw'>in</span> <span class='lparen'>(</span><span class='int'>0</span><span class='op'>..</span> <span class='id identifier rubyid_others'>others</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
@@ -670,7 +709,7 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Extaer:</p>
+<p>Métodos para extaer elementos de la lista:</p>
 
 
   </div>
@@ -765,7 +804,7 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Añadir</p>
+<p>Métodos para añadir elementos a la lista:</p>
 
 
   </div>
@@ -853,7 +892,7 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Dec  5 09:35:13 2018 by
+  Generated on Wed Dec  5 11:53:47 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

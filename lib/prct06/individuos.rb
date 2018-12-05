@@ -10,6 +10,7 @@ class Individuo
 		"( #{@nombre},#{@edad},#{@sexo} )"	
 	end
 
+	# Método comparable para Individuos
 	def <=>(other)
 		return nil unless other.is_a? Individuo
 		@edad <=> other.edad
