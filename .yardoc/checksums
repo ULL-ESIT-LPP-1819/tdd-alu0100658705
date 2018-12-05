@@ -1,0 +1,6 @@
+lib/prct06.rb 98ab1dd939c68080384b55e765c05b9ecb7af09c
+lib/prct06/list.rb e715b7c1cf453cb3aa6f8eb1cb7355e7b35a3523
+lib/prct06/version.rb d5cbdeee26376c47bc01eee881817dc3d9474f57
+lib/prct06/pacientes.rb e71ec8c6f59368882847bf41c38f6f1d566f5f79
+lib/prct06/individuos.rb 0fbcac75c7768ba83f3d86842ee73b6227562a6f
+lib/prct06/nutricional.rb dabf552fda29a1c04912b42921b5c66f125cb5af
