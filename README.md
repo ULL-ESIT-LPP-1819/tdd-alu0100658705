@@ -19,7 +19,7 @@ gem 'prct06'
 
 $ bundle
 
-$bundle install point
+$bundle install prct06
 
 ## Usage
 
