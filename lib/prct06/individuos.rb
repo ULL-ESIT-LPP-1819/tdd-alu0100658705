@@ -17,3 +17,4 @@ class Individuo
 	end
 
 end
+

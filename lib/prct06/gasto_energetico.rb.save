@@ -1,4 +1,5 @@
-class Gasto_Energetico 
+class Gasto_Energetico < Pacientes
+
 # ¿PROGRAMACIÓN FUNCIONAL? ¿CÓMO?
 
 #pt = Proc.new {|x| peso_ideal = (x-150)*0.75+50 }
@@ -30,19 +31,13 @@ class Gasto_Energetico
 	end
 
 	# Gasto energético total
-	def gasto_total(x,y,z)
-		gasto_total=x+y+z
+	def gasto_total(x,y,	gasto_total=x+y+z
 	end
 		
 	# ¿CÓMO SE COMPARA?
-	# MÉTODOS COLLECT, REDUCE Y ZIP ??
 
-	def valor_menu(lista)
-	# le paso un array,
-	(lista.collect { |nodo| nodo.valor_energetico }).reduce(:+)
-	
-	#puts "La cantidad de la alimentación es suficiente para cubrir las exigencias del organismo"	
+
+
+
 	end
-	
-end
 
