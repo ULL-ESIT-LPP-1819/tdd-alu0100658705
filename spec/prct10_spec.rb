@@ -20,9 +20,25 @@ RSpec.describe Pacientes do
 		@pt.call(tallacm)
 	end
 
+	# GASTO ENERGÉTICO BASAL
+	# usamos lambda
+ 	
+	@gb_m = -> arg1, arg2, arg3 {((10*arg1)+(6.25*arg2)-(5*arg3)-161).round(2)}
+	@gb_h = -> arg1, arg2, arg3 {((10*arg1)+(6.25*arg2)-(5*arg3)+5).round(2)}
 
+
+	def gasto_basal(edad,peso,tallam,sexo)
+		tallacm=tallam*100
+		if (sexo == 0)
+			@gb_m.call(peso,tallacm,edad)
+		else
+			@gb_h.call(peso,tallacm,edad)
+		
+		end
 	end
 	
+
+	end
 	context"Comprobaciones para PESO TEÓRICO IDEAL" do
 		it "persona1" do	
 			expect(peso_teorico(@persona1.talla)).to eq(70.25)
@@ -34,7 +50,15 @@ RSpec.describe Pacientes do
 			expect(peso_teorico(@persona5.talla)).to eq(65)
 		end
 	end
-	
+
+	context"Comprobaciones para GASTO ENERGÉTICO BASAL" do
+		it "persona1" do
+			expect(gasto_basal(@persona1.edad,@persona1.peso,@persona1.talla,@persona1.sexo)).to eq(1681.25)
+		end
+		it "persona3" do
+			expect(gasto_basal(@persona3.edad,@persona3.peso,@persona3.talla,@persona3.sexo)).to eq(1181.5)
+		end
+	end
 	#it "Comprobaciones para gasto energético basal" do
 	#	expect(@persona1.gasto_energetico(@persona1.sexo,@persona1.peso,@persona1.talla,@persona1.edad)).to eq(597.13)
 	#end
