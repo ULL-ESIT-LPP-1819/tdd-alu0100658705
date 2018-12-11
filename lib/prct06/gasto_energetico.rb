@@ -1,14 +1,6 @@
 class Gasto_Energetico 
 # ¿PROGRAMACIÓN FUNCIONAL? ¿CÓMO?
 
-#pt = Proc.new {|x| peso_ideal = (x-150)*0.75+50 }
-
-	# Peso teórico ideal
-	def peso_teorico (x)
-		y=x*100
-		peso_ideal = (y-150)*0.75+50			
-	end 
-
 	# Gasto energético basal
 	def gasto_energetico (w,x,y,z)
 		t=y*2
