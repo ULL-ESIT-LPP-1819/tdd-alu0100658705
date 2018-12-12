@@ -1,4 +1,4 @@
-RSpec.describe Pacientes do
+RSpec.describe Prct06 do
 	before :each do
 		@persona1=Pacientes.new("Pablo",26,1,70,1.77,[],[],[],[],[],[])
 		@persona2=Pacientes.new("Elena",26,0,69,1.60,[],[],[],[],[],[])
@@ -7,7 +7,7 @@ RSpec.describe Pacientes do
 		@persona5=Pacientes.new("Julio",40,1,83,1.70,[],[],[],[],[],[])
 
 		@personas = [@persona1, @persona2, @persona3, @persona4, @persona5]
-	
+		@factor_actividad = [0.27, 0.12, 0.12, 0.54, 0.12]
 
 	# PESO TEÓRICO IDEAL:
 	# Convertimos el bloque que calcula el peso teórico ideal en una clase Proc
@@ -25,9 +25,9 @@ RSpec.describe Pacientes do
 	@gb_h = -> arg1, arg2, arg3 {((10*arg1)+(6.25*arg2)-(5*arg3)+5).round(2)}
 
 	def gasto_basal(individuos)
-		@array = individuos.collect {|nodo| if nodo.sexo == 0; @gb_m.call(nodo.peso, nodo.talla*100, nodo.edad) else @gb_h.call(nodo.peso, nodo.talla*100, nodo.edad) end}
-		return @array
-		end
+		@v_bas = individuos.collect {|nodo| if nodo.sexo == 0; @gb_m.call(nodo.peso, nodo.talla*100, nodo.edad) else @gb_h.call(nodo.peso, nodo.talla*100, nodo.edad) end}
+		return @v_bas
+	end
 	
 
 	# EFECTO TERMÓGENO
@@ -37,11 +37,22 @@ RSpec.describe Pacientes do
 	end
 	
 
-
 	# GASTO ACTIVIDAD FÍSICA
-
+	def gasto_actividad(individuos,factor)
+		@v_act = gasto_basal(individuos)
+		@v_act.zip(factor).map{|x, y| (x * y).round(2)}
+		 
+	end
+	
 
 	# GASTO ENERGÉTICO TOTAL
+	def gasto_total(individuos,factor)
+	@v_1 = gasto_basal(individuos)
+	@v_2 = efecto_termogeno(individuos)
+	@v_3 = gasto_actividad(individuos,factor)
+
+	@v_1.zip(@v_2, @v_3).map {|x, y, z| (x + y + z).round(2)}
+	end
 
 
 	end
@@ -63,20 +74,67 @@ RSpec.describe Pacientes do
 		end
 	end
 
-	#it "Comprobaciones para gasto energético basal" do
-	#	expect(@persona1.gasto_energetico(@persona1.sexo,@persona1.peso,@persona1.talla,@persona1.edad)).to eq(597.13)
-	#end
+	
+	context"Comprobaciones para GASTO ACTIVIDAD FÍSICA" do
+		it "Vector personas" do
+		expect(gasto_actividad(@personas,@factor_actividad)).to eq([453.94, 167.88, 141.78, 998.33, 203.7])
+		end
+	end
 
-	#before :each do
-	#	@desayuno = Nutricional.new("Cereales",15,12,30,40,5.2,0.6)
-	#	@aperitivo = Nutricional.new("Bocadillo",11,6,35,29,4.2,0.4)
-	#	@almuerzo = Nutricional.new("Ensalada",20,9,30,38,5.8,1.2)
-	#	@merienda = Nutricional.new("Natilla",10,7,15,16,4,0.5)
-	#	@cena = Nutricional.new("Sopa",1,0.3,4,2,14,3)	
+	context"Comprobaciones para GASTO ENERGÉTICO TOTAL" do
+		it "Vector personas" do
+		expect(gasto_total(@personas,@factor_actividad)).to eq([2303.32, 1706.78, 1441.43, 3031.96, 2070.95])
+		end
+	end
 
-	#end
 
-	#it "Comprobaciones para calcular el valor energético del menú" do
-	#	expect(@menu1.valor_menu(@menu1)).to eq(1500)
-	#end
+
+	before :each do
+		@cereales = Nutricional.new("Cereales",15,12,30,40,5.2,0.6)
+		@jugo = Nutricional.new("Jugo",11,6,35,29,4.2,0.4)
+		@manzana = Nutricional.new("Manzana",20,9,30,38,5.8,1.2)
+		@ensalada = Nutricional.new("Ensalada",10,7,15,16,4,0.5)
+		@bocadillo = Nutricional.new("Bocadillo",5,0.3,4,2,14,0.2)	
+		@pescado = Nutricional.new("Pescado",9,23,45,21,6,0.8)
+		@pollo = Nutricional.new("Pollo",5,9,10,20,4,1)
+		@pasta = Nutricional.new("Pasta",12,11,19,23,0.8,0.9)
+		@yogourt = Nutricional.new("Yogourt",9,8.5,21,15,0.5,0.9)
+		@sopa = Nutricional.new("Sopa",5,3,15,18,20,1.3)
+		
+		@menu1 = [@cereales, @ensalada, @pescado, @pollo, @yogourt]
+		@menu2 = [@jugo, @manzana, @pasta, @sopa, @cereales]
+		@menu3 = [@manzana, @yogourt, @bocadillo, @pasta, @sopa]
+		@menu4 = [@jugo, @cereales, @pollo, @pescado, @bocadillo, @sopa]
+		@menu5 = [@cereales, @manzana, @ensalada, @pescado, @pasta, @yogourt]
+		
+		# NOTA: se podrá asignar un mismo menú a varios usuarios			
+
+	def verificar(individuos, menu)
+		@se_cumple = -> {return "Se cubren las exigencias calóricas"}
+		@no_cumple = -> {return "No se cubren las exigencias calóricas"}		
+
+		@valor_e = menu.collect { |nodo| nodo.Valor_energetico}
+		@valor_e = [@valor_e.reduce(:+)]
+		
+		@valor_g = gasto_total(individuos, @factor_actividad)
+
+		@margen = @valor_g.collect { |nodo| nodo*0.10}
+
+		@valor_e.zip(@valor_g,@margen).map {| x, y, z| if (x + z - y).round(2) >= 0; @se_cumple.call else @no_cumple.call end}  
+		
+	end
+
+	
+	end
+	
+context"Comprobaciones para vereficar las exigencias calóricas del organismo" do
+		it "Prueba para el primer individuo con el primer menú" do
+		prueba_p = [@persona1]
+		expect(verificar(prueba_p, @menu1)).to eq(["Se cubren las exigencias calóricas"])
+		end
+		it "Prueba para dos individuos con el segundo menú" do
+		personas_dos = [@persona2,@persona3]
+		expect(verificar(personas_dos, @menu2)).to eq(["Se cubren las exigencias calóricas"])
+		end
+	end
 end
