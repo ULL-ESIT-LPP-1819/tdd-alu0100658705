@@ -1,4 +1,3 @@
-#require '/home/usuario/iass-de-la-ull-alu0100658705/LPP/prct06/lib/prct06/gasto_energetico'
 class Pacientes < Individuo
  
 	attr_reader :peso, :talla, :cintura, :cadera, :tricipital, :bicipital, :subescapular, :suprailiaco
