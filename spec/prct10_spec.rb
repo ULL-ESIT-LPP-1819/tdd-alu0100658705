@@ -25,8 +25,7 @@ RSpec.describe Prct06 do
 	@gb_h = -> arg1, arg2, arg3 {((10*arg1)+(6.25*arg2)-(5*arg3)+5).round(2)}
 
 	def gasto_basal(individuos)
-		@v_bas = individuos.collect {|nodo| if nodo.sexo == 0; @gb_m.call(nodo.peso, nodo.talla*100, nodo.edad) else @gb_h.call(nodo.peso, nodo.talla*100, nodo.edad) end}
-		return @v_bas
+		individuos.collect {|nodo| if nodo.sexo == 0; @gb_m.call(nodo.peso, nodo.talla*100, nodo.edad) else @gb_h.call(nodo.peso, nodo.talla*100, nodo.edad) end}
 	end
 	
 
@@ -106,21 +105,23 @@ RSpec.describe Prct06 do
 		@menu3 = [@manzana, @yogourt, @bocadillo, @pasta, @sopa]
 		@menu4 = [@jugo, @cereales, @pollo, @pescado, @bocadillo, @sopa]
 		@menu5 = [@cereales, @manzana, @ensalada, @pescado, @pasta, @yogourt]
-		
-		# NOTA: se podrá asignar un mismo menú a varios usuarios			
+					
 
 	def verificar(individuos, menu)
+		@valor_final = Array.new
 		@se_cumple = -> {return "Se cubren las exigencias calóricas"}
 		@no_cumple = -> {return "No se cubren las exigencias calóricas"}		
 
-		@valor_e = menu.collect { |nodo| nodo.Valor_energetico}
-		@valor_e = [@valor_e.reduce(:+)]
 		
+		menu.each do |array_menu|
+		@valor_e = array_menu.collect {|nodo| nodo.Valor_energetico}
+		@valor_final.push(@valor_e.reduce(:+))
+		end 
+				
 		@valor_g = gasto_total(individuos, @factor_actividad)
-
 		@margen = @valor_g.collect { |nodo| nodo*0.10}
 
-		@valor_e.zip(@valor_g,@margen).map {| x, y, z| if (x + z - y).round(2) >= 0; @se_cumple.call else @no_cumple.call end}  
+		@valor_g.zip(@valor_final,@margen).map {| x, y, z| if (y + z - x).round(2) >= 0; @se_cumple.call else @no_cumple.call end}  
 		
 	end
 
@@ -130,11 +131,18 @@ RSpec.describe Prct06 do
 context"Comprobaciones para vereficar las exigencias calóricas del organismo" do
 		it "Prueba para el primer individuo con el primer menú" do
 		prueba_p = [@persona1]
-		expect(verificar(prueba_p, @menu1)).to eq(["Se cubren las exigencias calóricas"])
+		prueba_m = [@menu1]
+		expect(verificar(prueba_p, prueba_m)).to eq(["Se cubren las exigencias calóricas"])
 		end
-		it "Prueba para dos individuos con el segundo menú" do
+		it "Prueba para dos individuos con dos menus" do
 		personas_dos = [@persona2,@persona3]
-		expect(verificar(personas_dos, @menu2)).to eq(["Se cubren las exigencias calóricas"])
+		menu_dos = [@menu2,@menu1]
+		expect(verificar(personas_dos, menu_dos)).to eq(["Se cubren las exigencias calóricas", "Se cubren las exigencias calóricas"])
+		end
+		it "Prueba para tres individuos con el tres menús" do
+		personas_tres = [@persona2,@persona3,@persona4]
+		menu_tres = [@menu5,@menu4,@menu2]
+		expect(verificar(personas_tres, menu_tres)).to eq(["Se cubren las exigencias calóricas", "Se cubren las exigencias calóricas", "Se cubren las exigencias calóricas"])
 		end
 	end
 end
