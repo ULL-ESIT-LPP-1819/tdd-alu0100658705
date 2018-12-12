@@ -108,6 +108,8 @@ RSpec.describe Prct06 do
 		@menu6 = [@jugo, @cereales, @bocadillo]
 		@menu7 = [@manzana, @jugo, @sopa, @yogourt]					
 
+
+	# Método verificar
 	def verificar(individuos, menu)
 		@valor_final = Array.new
 		@se_cumple = -> {return "Se cubren las exigencias calóricas"}
