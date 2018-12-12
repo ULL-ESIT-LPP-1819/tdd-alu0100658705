@@ -13,6 +13,10 @@
 	- Método Enumerable
 	- Documentación con Yard
 
+## Práctica 10 
+	- Programación Funcional
+	- Travis
+
 ## Installation
 
 gem 'prct06'
