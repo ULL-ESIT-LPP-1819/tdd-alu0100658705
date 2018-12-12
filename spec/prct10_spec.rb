@@ -92,19 +92,20 @@ RSpec.describe Prct06 do
 		@cereales = Nutricional.new("Cereales",15,12,12,13,5.2,0.6)
 		@jugo = Nutricional.new("Jugo",11,6,4,6,4.2,0.4)
 		@manzana = Nutricional.new("Manzana",5,9,2,8,5.8,1.2)
-		@ensalada = Nutricional.new("Ensalada",10,7,15,16,4,0.5)
+		@ensalada = Nutricional.new("Ensalada",10,7,10,10,4,0.5)
 		@bocadillo = Nutricional.new("Bocadillo",5,0.3,4,2,14,0.2)	
-		@pescado = Nutricional.new("Pescado",9,23,45,21,6,0.8)
+		@pescado = Nutricional.new("Pescado",9,2,10,9,6,0.8)
 		@pollo = Nutricional.new("Pollo",5,9,10,20,4,1)
 		@pasta = Nutricional.new("Pasta",12,11,19,23,0.8,0.9)
 		@yogourt = Nutricional.new("Yogourt",9,8.5,5,10,0.5,0.9)
 		@sopa = Nutricional.new("Sopa",5,3,11,12,10,1.3)
+		@pera = Nutricional.new("Pera",9,8,4,17,2,0.1)
 		
-		@menu1 = [@cereales, @ensalada, @pescado, @pollo, @yogourt]
+		@menu1 = [@cereales,@jugo,@ensalada,@yogourt]
 		@menu2 = [@jugo, @manzana, @pasta, @sopa, @cereales]
-		@menu3 = [@manzana, @yogourt, @bocadillo, @pasta, @sopa]
+		@menu3 = [@manzana, @bocadillo, @cereales, @pera]
 		@menu4 = [@jugo, @cereales, @pollo, @pescado, @bocadillo, @sopa]
-		@menu5 = [@cereales, @manzana, @ensalada, @pescado, @pasta, @yogourt]
+		@menu5 = [@cereales, @manzana, @pasta]
 		@menu6 = [@jugo, @cereales, @bocadillo]
 		@menu7 = [@manzana, @jugo, @sopa, @yogourt]					
 
@@ -112,19 +113,20 @@ RSpec.describe Prct06 do
 	# Método verificar
 	def verificar(individuos, menu)
 		@valor_final = Array.new
-		@se_cumple = -> {return "Se cubren las exigencias calóricas"}
-		@no_cumple = -> {return "Las exigencias calóricas no están cubiertas"}		
+		@se_cumple = -> {return "El menú asignado es adecuado"}
+		@no_cumple = -> {return "No es adecuado"}		
 
 		
 		menu.each do |array_menu|
 		@valor_e = array_menu.collect {|nodo| nodo.Valor_energetico}
 		@valor_final.push(@valor_e.reduce(:+))
 		end 
-				
+		
 		@valor_g = gasto_total(individuos, @factor_actividad)
 		@margen = @valor_g.collect { |nodo| nodo*0.10}
 
-		@valor_g.zip(@valor_final,@margen).map {| x, y, z| if (y + z - x).round(2) >= 0; @se_cumple.call else @no_cumple.call end}  
+		# Se verifica que la cantidad de alimentación es adecuada para cubrir las exigencias calóricas 
+		@valor_g.zip(@valor_final,@margen).map {|x, y, z| if y.between?(x-z,x+z); @se_cumple.call else @no_cumple.call end}
 		
 	end
 
@@ -135,27 +137,27 @@ context"Comprobaciones para vereficar las exigencias calóricas del organismo" d
 		it "Prueba para el primer individuo con el primer menú" do
 		prueba_p = [@persona1]
 		prueba_m = [@menu1]
-		expect(verificar(prueba_p, prueba_m)).to eq(["Se cubren las exigencias calóricas"])
+		expect(verificar(prueba_p, prueba_m)).to eq(["El menú asignado es adecuado"])
 		end
 		it "Prueba para dos individuos con dos menus" do
 		personas_dos = [@persona2,@persona3]
 		menu_dos = [@menu2,@menu1]
-		expect(verificar(personas_dos, menu_dos)).to eq(["Se cubren las exigencias calóricas", "Se cubren las exigencias calóricas"])
+		expect(verificar(personas_dos, menu_dos)).to eq(["No es adecuado", "No es adecuado"])
 		end
 		it "Prueba para tres individuos con tres menús" do
 		personas_tres = [@persona2,@persona3,@persona4]
-		menu_tres = [@menu5,@menu4,@menu2]
-		expect(verificar(personas_tres, menu_tres)).to eq(["Se cubren las exigencias calóricas", "Se cubren las exigencias calóricas", "Se cubren las exigencias calóricas"])
+		menu_tres = [@menu6,@menu4,@menu2]
+		expect(verificar(personas_tres, menu_tres)).to eq(["El menú asignado es adecuado", "No es adecuado", "No es adecuado"])
 		end
 		it "Prueba para cinco individuos con cinco menús" do
                 personas_cinco = [@persona2,@persona3,@persona4,@persona1,@persona5]
                 menu_cinco = [@menu5,@menu4,@menu6,@menu1,@menu1]
-                expect(verificar(personas_cinco, menu_cinco)).to eq(["Se cubren las exigencias calóricas", "Se cubren las exigencias calóricas", "Las exigencias calóricas no están cubiertas", "Se cubren las exigencias calóricas", "Se cubren las exigencias calóricas"])
+                expect(verificar(personas_cinco, menu_cinco)).to eq(["El menú asignado es adecuado", "No es adecuado", "No es adecuado","No es adecuado", "No es adecuado"])
                 end		
 		it "Prueba para cinco individuos con el mismo menú" do
                 personas_cinco = [@persona1,@persona2,@persona3,@persona4,@persona5]
-                menu_cinco = [@menu7,@menu7,@menu7,@menu7,@menu7]
-                expect(verificar(personas_cinco, menu_cinco)).to eq(["Las exigencias calóricas no están cubiertas", "Se cubren las exigencias calóricas", "Se cubren las exigencias calóricas", "Las exigencias calóricas no están cubiertas", "Se cubren las exigencias calóricas"])
+                menu_cinco = [@menu3,@menu3,@menu3,@menu3,@menu3]
+                expect(verificar(personas_cinco, menu_cinco)).to eq(["El menú asignado es adecuado", "No es adecuado", "No es adecuado", "No es adecuado", "El menú asignado es adecuado"])
                 end
 
 	end
