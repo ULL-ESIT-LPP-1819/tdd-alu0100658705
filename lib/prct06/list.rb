@@ -1,5 +1,6 @@
-class Lista
-	include Enumerable	
+class Lista 
+	include Enumerable
+	
 	def initialize()
 		@Node = Struct.new(:value, :next, :prev)
 		@head = @tail = nil
@@ -93,8 +94,34 @@ class Lista
 		push_tail(others[i])
 		end
 	end
+	
+# Método ordenar mediante un for
+	def ordenar_for(factor)
+		vector_ordenado = Array.new
+		
+		# Añadimos los elementos de la lista al vector
+		while @head != nil
+		vector_ordenado.push(@head.value)
+                @head = @head.next
+                end
+	
+		for i in 0..vector_ordenado.length-1
+			for j in 0..(vector_ordenado.length - (2+i))
+				@v1 = vector_ordenado[j].gasto_total(factor[j])
+				@v2 = vector_ordenado[j+1].gasto_total(factor[j+1]) 
+				if ( @v1 > @v2 )
+					temp = vector_ordenado[j]
+					vector_ordenado[j] = vector_ordenado[j+1]
+					vector_ordenado[j+1] = temp							
+				end
+			end
+		end
+		
+		for i in 0..vector_ordenado.length-1
+			puts vector_ordenado[i]
+		end
+
+		return vector_ordenado
+	end
 
 end
-
-
-

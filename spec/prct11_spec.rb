@@ -24,7 +24,6 @@ RSpec. describe Prct06 do
 		@menu9 = [@ensalada, @pollo, @cereales, @pasta, @manzana]
 
 		@menu = [@menu0, @menu1, @menu2, @menu3, @menu4, @menu5, @menu6, @menu7, @menu8, @menu9]
-		
 		end
 
 
@@ -115,14 +114,18 @@ RSpec. describe Prct06 do
                 @p8=Pacientes.new("Jose",69,1,85,1.75,[],[],[],[],[],[])
                 @p9=Pacientes.new("Carlos",70,1,72,1.70,[],[],[],[],[],[])
 
-		@lista = Lista.new
-		@lista.insert([@p0,@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9])
-
+		@lista_pacientes = Lista.new
+		@lista_pacientes.insert([@p0,@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9])
+		@factor_actividad = [0.27, 0.12, 0.12, 0.54, 0.12, 0.27, 0.54, 0.12, 0.12, 0.27]
 		end
+		
+			
 		context"Comprobaciones para ordenar una lista de valoraciones nutricionales de individuos" do
 			it"Funciona para mostrar el menu ordenado mediantes un each" do
-			expect(@lista.ordenar_for).to eq([@p1,@p2,@p3])
+			expect(@lista_pacientes.ordenar_for(@factor_actividad)).to eq([@p7, @p2, @p1, @p9, @p6, @p0, @p3, @p8, @p4, @p5])
+			
 			end
+			
 		end
 end
 
