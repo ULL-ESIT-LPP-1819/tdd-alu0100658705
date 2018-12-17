@@ -75,27 +75,27 @@ class Nutricional
 		grasa <=> other.grasa # Compara en función de la cantidad de grasa
 	end	
 
-	
-	# PRÁCTICA 11:
-
-
+	# PRÁCTICA 11
 
 	# Método obtener un nuevo array ordenado mediante un for
-	def ordenar_for(menu)
+ 	def ordenar_for(menu)
         	for i in 0..menu.length-1
-              	for j in 0..(menu.length - (2+i))
-               		@valor_1 = menu[j].collect {|nodo| nodo.Valor_energetico } 
-                	@valor_2 = menu[j+1].collect {|nodo| nodo.Valor_energetico }                    
-              	  		if ( @valor_1.reduce(:+) < @valor_2.reduce(:+) ) 
-                            		temp = menu[j]
-                                       	menu[j] = menu[j+1]
-                                        menu[j+1] = temp
-                             	end
-              	end
-              	end
-   	return menu
-        end
+                for j in 0..(menu.length - (2+i))
+                	@valor_1 = menu[j].collect {|nodo| nodo.Va                                       
+		    	@valor_2 = menu[j+1].collect {|nodo| nodo.     
+                       		if ( @valor_1.reduce(:+) < @valor_
+                                     temp = menu[j]
+                                                menu[j] = menu[j+                                               menu[j+1] = temp
+                                        end
+                                        end
+                                end
 
+                                #for i in 0..menu.length-1
+                                #@comp =         menu[i].collect {|nodo| nodo.Valo$
+                                #               puts @comp.reduce(:+)
+                                #end
+                return menu
+                end
 
 
 	# Ejemplo para la comprobación de los métodos
