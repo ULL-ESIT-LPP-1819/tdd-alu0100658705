@@ -102,6 +102,28 @@ RSpec. describe Prct06 do
                         expect(ordenar_each(@menu)).to eq([@menu6, @menu7, @menu5, @menu3, @menu1, @menu0, @menu8, @menu9, @menu2, @menu4])
                         end
 		end 
+
+		before :each do
+                @p0=Pacientes.new("Pablo",26,1,70,1.77,[],[],[],[],[],[])
+                @p1=Pacientes.new("Elena",26,0,69,1.60,[],[],[],[],[],[])
+                @p2=Pacientes.new("Sara",19,0,45,1.58,[],[],[],[],[],[])
+                @p3=Pacientes.new("Arturo",35,1,90,1.79,[],[],[],[],[],[])
+                @p4=Pacientes.new("Julio",40,1,83,1.70,[],[],[],[],[],[])
+		@p5=Pacientes.new("Manuel",29,1,100,1.90,[],[],[],[],[],[])
+                @p6=Pacientes.new("Patricia",22,0,72,1.69,[],[],[],[],[],[])
+                @p7=Pacientes.new("Amanda",16,0,40,1.50,[],[],[],[],[],[])
+                @p8=Pacientes.new("Jose",69,1,85,1.75,[],[],[],[],[],[])
+                @p9=Pacientes.new("Carlos",70,1,72,1.70,[],[],[],[],[],[])
+
+		@lista = Lista.new
+		@lista.insert([@p0,@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9])
+
+		end
+		context"Comprobaciones para ordenar una lista de valoraciones nutricionales de individuos" do
+			it"Funciona para mostrar el menu ordenado mediantes un each" do
+			expect(@lista.ordenar_for).to eq([@p1,@p2,@p3])
+			end
+		end
 end
 
 	
