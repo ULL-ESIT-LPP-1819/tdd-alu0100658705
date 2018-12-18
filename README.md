@@ -17,6 +17,10 @@
 	- Programación Funcional
 	- Travis
 
+## Práctica 11
+	- Programación Funcional
+	- Coveralls
+
 ## Installation
 
 gem 'prct06'

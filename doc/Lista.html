@@ -291,6 +291,76 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#ordenar_each-instance_method" title="#ordenar_each (instance method)">#<strong>ordenar_each</strong>(factor)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Método ordenar median each.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ordenar_for-instance_method" title="#ordenar_for (instance method)">#<strong>ordenar_for</strong>(factor)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Método ordenar mediante un for.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ordenar_sort-instance_method" title="#ordenar_sort (instance method)">#<strong>ordenar_sort</strong>(factor)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#pop_head-instance_method" title="#pop_head (instance method)">#<strong>pop_head</strong>  &#x21d2; Object </a>
     
 
@@ -413,13 +483,13 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
       <pre class="lines">
 
 
-3
 4
 5
-6</pre>
+6
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 3</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 4</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='rparen'>)</span>
 	<span class='ivar'>@Node</span> <span class='op'>=</span> <span class='const'>Struct</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:value</span><span class='comma'>,</span> <span class='symbol'>:next</span><span class='comma'>,</span> <span class='symbol'>:prev</span><span class='rparen'>)</span>
@@ -463,18 +533,18 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
       <pre class="lines">
 
 
-71
-72
 73
 74
 75
 76
 77
 78
-79</pre>
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clasificar'>clasificar</span>
 	<span class='kw'>if</span> <span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_sal'>sal</span> <span class='op'>&lt;</span> <span class='int'>1</span>
@@ -516,16 +586,16 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
       <pre class="lines">
 
 
-82
-83
 84
 85
 86
 87
-88</pre>
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 84</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each'>each</span> 
 	<span class='id identifier rubyid_iterator'>iterator</span> <span class='op'>=</span> <span class='ivar'>@head</span>
@@ -565,12 +635,12 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
       <pre class="lines">
 
 
-62
 63
-64</pre>
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 62</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_next'>get_next</span>
 	<span class='kw'>return</span> <span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
@@ -595,12 +665,12 @@ llama –&gt; ejemplo: @list1.get.value.sal.</p>
       <pre class="lines">
 
 
-66
 67
-68</pre>
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 67</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_prev'>get_prev</span>
 	<span class='kw'>return</span> <span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_prev'>prev</span>
@@ -637,12 +707,12 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
       <pre class="lines">
 
 
-33
 34
-35</pre>
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_value'>get_value</span>
 	<span class='kw'>return</span> <span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
@@ -678,19 +748,281 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
       <pre class="lines">
 
 
-91
-92
 93
 94
-95</pre>
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_insert'>insert</span><span class='lparen'>(</span><span class='id identifier rubyid_others'>others</span><span class='rparen'>)</span>
 	<span class='kw'>for</span> <span class='id identifier rubyid_i'>i</span> <span class='kw'>in</span> <span class='lparen'>(</span><span class='int'>0</span><span class='op'>..</span> <span class='id identifier rubyid_others'>others</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_push_tail'>push_tail</span><span class='lparen'>(</span><span class='id identifier rubyid_others'>others</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 	<span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ordenar_each-instance_method">
+  
+    #<strong>ordenar_each</strong>(factor)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Método ordenar median each</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 129</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ordenar_each'>ordenar_each</span><span class='lparen'>(</span><span class='id identifier rubyid_factor'>factor</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_vector_lista'>vector_lista</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+	<span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+	<span class='id identifier rubyid_vec'>vec</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>		
+
+	<span class='comment'># Añadimos los elementos de la lista a un vector, para poder usar zip con el array de factores
+</span>	<span class='kw'>while</span> <span class='ivar'>@head</span> <span class='op'>!=</span> <span class='kw'>nil</span>
+	<span class='id identifier rubyid_vector_lista'>vector_lista</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+	<span class='ivar'>@head</span> <span class='op'>=</span> <span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span> 
+	<span class='kw'>end</span>
+					
+	<span class='id identifier rubyid_vec'>vec</span> <span class='op'>=</span> <span class='id identifier rubyid_vector_lista'>vector_lista</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_factor'>factor</span><span class='rparen'>)</span>
+
+	<span class='id identifier rubyid_bloque_each'>bloque_each</span> <span class='op'>=</span> <span class='const'>Proc</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>  <span class='lbrace'>{</span>
+                               <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_ind1'>ind1</span><span class='comma'>,</span> <span class='id identifier rubyid_fa1'>fa1</span><span class='op'>|</span>
+                                   	<span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_ind2'>ind2</span><span class='comma'>,</span> <span class='id identifier rubyid_fa2'>fa2</span><span class='op'>|</span>
+                                        	<span class='kw'>if</span> <span class='lparen'>(</span> <span class='id identifier rubyid_ind1'>ind1</span><span class='period'>.</span><span class='id identifier rubyid_gasto_total'>gasto_total</span><span class='lparen'>(</span><span class='id identifier rubyid_fa1'>fa1</span><span class='rparen'>)</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_ind2'>ind2</span><span class='period'>.</span><span class='id identifier rubyid_gasto_total'>gasto_total</span><span class='lparen'>(</span><span class='id identifier rubyid_fa2'>fa2</span><span class='rparen'>)</span> <span class='rparen'>)</span>
+                                                       <span class='id identifier rubyid_temp'>temp</span> <span class='op'>=</span> <span class='id identifier rubyid_ind1'>ind1</span>
+                                                       <span class='id identifier rubyid_ind1'>ind1</span> <span class='op'>=</span> <span class='id identifier rubyid_ind2'>ind2</span>
+                                                       <span class='id identifier rubyid_ind2'>ind2</span> <span class='op'>=</span> <span class='id identifier rubyid_temp'>temp</span>
+						<span class='id identifier rubyid_temp1'>temp1</span> <span class='op'>=</span> <span class='id identifier rubyid_fa1'>fa1</span>
+						<span class='id identifier rubyid_fa1'>fa1</span> <span class='op'>=</span> <span class='id identifier rubyid_fa2'>fa2</span>
+						<span class='id identifier rubyid_fa2'>fa2</span> <span class='op'>=</span> <span class='id identifier rubyid_temp1'>temp1</span>
+                                               <span class='kw'>end</span>
+  					<span class='kw'>end</span>
+                                       <span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_ind1'>ind1</span><span class='rparen'>)</span>
+                                       <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_ind1'>ind1</span><span class='comma'>,</span><span class='id identifier rubyid_fa1'>fa1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+                               <span class='kw'>end</span>
+                       <span class='kw'>if</span> <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>!=</span> <span class='int'>0</span>
+                       <span class='id identifier rubyid_bloque_each'>bloque_each</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='rparen'>)</span>
+                       <span class='kw'>end</span>
+                	<span class='rbrace'>}</span>
+
+	<span class='id identifier rubyid_bloque_each'>bloque_each</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='rparen'>)</span>
+
+	<span class='kw'>return</span> <span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span>	
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ordenar_for-instance_method">
+  
+    #<strong>ordenar_for</strong>(factor)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Método ordenar mediante un for</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 100</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ordenar_for'>ordenar_for</span><span class='lparen'>(</span><span class='id identifier rubyid_factor'>factor</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+			
+	<span class='comment'># Añadimos los elementos de la lista al vector para que se pueda reorganizar en el for
+</span>	<span class='kw'>while</span> <span class='ivar'>@head</span> <span class='op'>!=</span> <span class='kw'>nil</span>
+	<span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+               <span class='ivar'>@head</span> <span class='op'>=</span> <span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
+               <span class='kw'>end</span>
+	
+	<span class='kw'>for</span> <span class='id identifier rubyid_i'>i</span> <span class='kw'>in</span> <span class='int'>0</span><span class='op'>..</span><span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='op'>-</span><span class='int'>1</span>
+		<span class='kw'>for</span> <span class='id identifier rubyid_j'>j</span> <span class='kw'>in</span> <span class='int'>0</span><span class='op'>..</span><span class='lparen'>(</span><span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='int'>2</span><span class='op'>+</span><span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span><span class='rparen'>)</span>
+			<span class='ivar'>@v1</span> <span class='op'>=</span> <span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gasto_total'>gasto_total</span><span class='lparen'>(</span><span class='id identifier rubyid_factor'>factor</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+			<span class='ivar'>@v2</span> <span class='op'>=</span> <span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gasto_total'>gasto_total</span><span class='lparen'>(</span><span class='id identifier rubyid_factor'>factor</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span> 
+			<span class='kw'>if</span> <span class='lparen'>(</span> <span class='ivar'>@v1</span> <span class='op'>&gt;</span> <span class='ivar'>@v2</span> <span class='rparen'>)</span>
+				<span class='id identifier rubyid_temp'>temp</span> <span class='op'>=</span> <span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='rbracket'>]</span>
+				<span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span>
+				<span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_temp'>temp</span>							
+				<span class='id identifier rubyid_temp1'>temp1</span> <span class='op'>=</span> <span class='id identifier rubyid_factor'>factor</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='rbracket'>]</span>
+				<span class='id identifier rubyid_factor'>factor</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_factor'>factor</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span>
+				<span class='id identifier rubyid_factor'>factor</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_temp1'>temp1</span>
+
+			<span class='kw'>end</span>
+		<span class='kw'>end</span>
+	<span class='kw'>end</span>
+
+	<span class='kw'>return</span> <span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ordenar_sort-instance_method">
+  
+    #<strong>ordenar_sort</strong>(factor)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 168</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ordenar_sort'>ordenar_sort</span><span class='lparen'>(</span><span class='id identifier rubyid_factor'>factor</span><span class='rparen'>)</span>
+	
+	<span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+	<span class='id identifier rubyid_vector_lista'>vector_lista</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+
+	<span class='comment'># Pasamo el valor de la lista a un array	
+</span>	 <span class='kw'>while</span> <span class='ivar'>@head</span> <span class='op'>!=</span> <span class='kw'>nil</span>
+               	<span class='id identifier rubyid_vector_lista'>vector_lista</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+               	<span class='ivar'>@head</span> <span class='op'>=</span> <span class='ivar'>@head</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
+               	<span class='kw'>end</span>
+
+	<span class='comment'># Usamos un zip para relacionar a cada individuo con su factor
+</span>	<span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span> <span class='op'>=</span> <span class='id identifier rubyid_vector_lista'>vector_lista</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_factor'>factor</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_gasto_total'>gasto_total</span><span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span> <span class='rbrace'>}</span> <span class='comment'># {|x,y| x.gasto_total(y)} &lt;=&gt; b.collect {|x,y| x.gasto_total(y)} }
+</span>
+	<span class='comment'># Devolvemos el vector ordenado:
+</span>	<span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='comma'>,</span> <span class='id identifier rubyid_factor'>factor</span> <span class='op'>=</span> <span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span><span class='period'>.</span><span class='id identifier rubyid_transpose'>transpose</span>
+
+	<span class='kw'>return</span> <span class='id identifier rubyid_vector_ordenado'>vector_ordenado</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -723,7 +1055,6 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
       <pre class="lines">
 
 
-39
 40
 41
 42
@@ -732,10 +1063,11 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
 45
 46
 47
-48</pre>
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pop_head'>pop_head</span><span class='lparen'>(</span><span class='rparen'>)</span>
 	<span class='kw'>if</span> <span class='ivar'>@head</span> <span class='op'>==</span> <span class='ivar'>@tail</span>
@@ -767,17 +1099,17 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
       <pre class="lines">
 
 
-50
 51
 52
 53
 54
 55
 56
-57</pre>
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pop_tail'>pop_tail</span><span class='lparen'>(</span><span class='rparen'>)</span>
 	<span class='kw'>if</span> <span class='ivar'>@head</span> <span class='op'>==</span> <span class='ivar'>@tail</span>
@@ -818,7 +1150,6 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
       <pre class="lines">
 
 
-10
 11
 12
 13
@@ -826,10 +1157,11 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
 15
 16
 17
-18</pre>
+18
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 11</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_push_head'>push_head</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
 	<span class='kw'>if</span> <span class='ivar'>@head</span> <span class='op'>==</span> <span class='kw'>nil</span>
@@ -860,7 +1192,6 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
       <pre class="lines">
 
 
-21
 22
 23
 24
@@ -868,10 +1199,11 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
 26
 27
 28
-29</pre>
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/prct06/list.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_push_tail'>push_tail</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
 	<span class='kw'>if</span> <span class='ivar'>@head</span> <span class='op'>==</span> <span class='kw'>nil</span>
@@ -892,7 +1224,7 @@ llama –&gt; ejemplo: @list1.get.value.sal</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 12 14:10:42 2018 by
+  Generated on Tue Dec 18 13:02:49 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>

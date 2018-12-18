@@ -543,6 +543,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#ordenar_for-instance_method" title="#ordenar_for (instance method)">#<strong>ordenar_for</strong>(menu)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Método obtener un nuevo array ordenado mediante un for.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#Proteinas-instance_method" title="#Proteinas (instance method)">#<strong>Proteinas</strong>  &#x21d2; Object </a>
     
 
@@ -1309,6 +1333,69 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="ordenar_for-instance_method">
+  
+    #<strong>ordenar_for</strong>(menu)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Método obtener un nuevo array ordenado mediante un for</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/prct06/nutricional.rb', line 84</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ordenar_for'>ordenar_for</span><span class='lparen'>(</span><span class='id identifier rubyid_menu'>menu</span><span class='rparen'>)</span>
+	<span class='kw'>for</span> <span class='id identifier rubyid_i'>i</span> <span class='kw'>in</span> <span class='int'>0</span><span class='op'>..</span><span class='id identifier rubyid_menu'>menu</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='op'>-</span><span class='int'>1</span>
+      	<span class='kw'>for</span> <span class='id identifier rubyid_j'>j</span> <span class='kw'>in</span> <span class='int'>0</span><span class='op'>..</span><span class='lparen'>(</span><span class='id identifier rubyid_menu'>menu</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='int'>2</span><span class='op'>+</span><span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span><span class='rparen'>)</span>
+       		<span class='ivar'>@valor_1</span> <span class='op'>=</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_nodo'>nodo</span><span class='op'>|</span> <span class='id identifier rubyid_nodo'>nodo</span><span class='period'>.</span><span class='const'>Valor_energetico</span> <span class='rbrace'>}</span> 
+        	<span class='ivar'>@valor_2</span> <span class='op'>=</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_nodo'>nodo</span><span class='op'>|</span> <span class='id identifier rubyid_nodo'>nodo</span><span class='period'>.</span><span class='const'>Valor_energetico</span> <span class='rbrace'>}</span>                    
+      	  		<span class='kw'>if</span> <span class='lparen'>(</span> <span class='ivar'>@valor_1</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='symbol'>:+</span><span class='rparen'>)</span> <span class='op'>&lt;</span> <span class='ivar'>@valor_2</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='symbol'>:+</span><span class='rparen'>)</span> <span class='rparen'>)</span> 
+                    		<span class='id identifier rubyid_temp'>temp</span> <span class='op'>=</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='rbracket'>]</span>
+                               	<span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span>
+                                <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='id identifier rubyid_j'>j</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_temp'>temp</span>
+                     	<span class='kw'>end</span>
+      	<span class='kw'>end</span>
+      	<span class='kw'>end</span>
+   	<span class='kw'>return</span> <span class='id identifier rubyid_menu'>menu</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="Proteinas-instance_method">
   
     #<strong>Proteinas</strong>  &#x21d2; <tt>Object</tt> 
@@ -1446,7 +1533,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Dec 12 14:10:43 2018 by
+  Generated on Tue Dec 18 13:02:50 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.5.1).
 </div>
