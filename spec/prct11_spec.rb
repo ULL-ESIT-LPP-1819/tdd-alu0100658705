@@ -122,10 +122,10 @@ RSpec. describe Prct06 do
 			
 		context"Comprobaciones para ordenar una lista de valoraciones nutricionales de individuos" do
 			it"Funciona para mostrar la lista de valoraciones nutricionales ordenada mediante un for" do
-			expect(@lista_pacientes.ordenar_for(@factor_actividad)).to eq([@p7, @p2, @p1, @p9, @p6, @p0, @p3, @p8, @p4, @p5])
+			expect(@lista_pacientes.ordenar_for(@factor_actividad)).to eq([@p7, @p2, @p1, @p8, @p9, @p4, @p0, @p6, @p5, @p3])
 			end
 			it"Funciona para mostrar la lista de valoraciones nutrcionales ordenada mediante un each" do
-			expect(@lista_pacientes.ordenar_each(@factor_actividad)).to eq([@p7, @p2, @p1, @p9, @p6, @p0, @p3, @p8, @p4, @p5])			
+			expect(@lista_pacientes.ordenar_each(@factor_actividad)).to eq([@p7, @p2, @p1, @p8, @p9, @p4, @p0, @p6, @p5, @p3])			
 			end
 			
 		end

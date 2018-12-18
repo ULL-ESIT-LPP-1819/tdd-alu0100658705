@@ -68,6 +68,7 @@ class Lista
 		return @head.prev
 	end
 
+
 # Método para clasificar según la sal:
 	def clasificar
 		if @head.value.sal < 1
@@ -98,7 +99,7 @@ class Lista
 # Método ordenar mediante un for
 	def ordenar_for(factor)
 		vector_ordenado = Array.new
-		
+				
 		# Añadimos los elementos de la lista al vector
 		while @head != nil
 		vector_ordenado.push(@head.value)
@@ -113,15 +114,57 @@ class Lista
 					temp = vector_ordenado[j]
 					vector_ordenado[j] = vector_ordenado[j+1]
 					vector_ordenado[j+1] = temp							
+					temp1 = factor[j]
+					factor[j] = factor[j+1]
+					factor[j+1] = temp1
+
 				end
 			end
-		end
-		
-		for i in 0..vector_ordenado.length-1
-			puts vector_ordenado[i]
 		end
 
 		return vector_ordenado
 	end
+
+# Método ordenar median each
+	def ordenar_each(factor)
+		vector_lista = Array.new
+		vector_ordenado = Array.new
+		vec = Array.new		
+
+		while @head != nil
+		vector_lista.push(@head.value)
+		@head = @head.next 
+		end
+						
+		vec = vector_lista.zip(factor)
+
+		bloque_each = Proc.new  {
+                                vec.each do |ind1, fa1|
+                                    	vec.each do |ind2, fa2|
+                                         	if ( ind1.gasto_total(fa1) > ind2.gasto_total(fa2) )
+                                                        temp = ind1
+                                                        ind1 = ind2
+                                                        ind2 = temp
+							temp1 = fa1
+							fa1 = fa2
+							fa2 = temp1
+                                                end
+   					end
+                                        vector_ordenado.push(ind1)
+                                        vec.delete([ind1,fa1])
+
+                                end
+                        if vec.length != 0
+                        bloque_each.call(vec)
+                        end
+                 	}
+
+		bloque_each.call(vec)
+
+		return vector_ordenado	
+	end
+
+	def ordenar_sort 
+	end		
 
 end

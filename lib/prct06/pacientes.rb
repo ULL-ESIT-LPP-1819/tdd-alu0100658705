@@ -69,7 +69,7 @@ class Pacientes < Individuo
 
 	# GASTO ENERGÉTICO TOTAL
 	def gasto_total(factor)
-	gasto_basal + efecto_termogeno + gasto_actividad(factor)
+	(gasto_basal + efecto_termogeno + gasto_actividad(factor)).round(2)
 	end
 
 
