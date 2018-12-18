@@ -77,7 +77,7 @@ RSpec. describe Prct06 do
 		# ORDENAR MEDIANTE UN SORT
 		def ordenar_sort(menu)
 			menu_sort = Array.new 
-			menu_sort = menu.sort_by { |nodo| nodo.collect {|nodo| nodo.Valor_energetico }.reduce(:+) }
+			menu_sort = menu.sort { |a, b| a.collect {|nodo| nodo.Valor_energetico}.reduce(:+) <=> b.collect {|nodo| nodo.Valor_energetico }.reduce(:+) }
 		return menu_sort
 		end
 
@@ -115,7 +115,10 @@ RSpec. describe Prct06 do
                 @p9=Pacientes.new("Carlos",70,1,72,1.70,[],[],[],[],[],[])
 
 		@lista_pacientes = Lista.new
+		# Lista con individuos:
 		@lista_pacientes.insert([@p0,@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9])
+
+		#Vector con los factores de actividad de cada individuo:
 		@factor_actividad = [0.27, 0.12, 0.12, 0.54, 0.12, 0.27, 0.54, 0.12, 0.12, 0.27]
 		end
 		
@@ -127,7 +130,9 @@ RSpec. describe Prct06 do
 			it"Funciona para mostrar la lista de valoraciones nutrcionales ordenada mediante un each" do
 			expect(@lista_pacientes.ordenar_each(@factor_actividad)).to eq([@p7, @p2, @p1, @p8, @p9, @p4, @p0, @p6, @p5, @p3])			
 			end
-			
+			it"Funciona para mostrar la lista de valoraciones nutrcionales ordenada mediante un sort" do
+                        expect(@lista_pacientes.ordenar_sort(@factor_actividad)).to eq([@p7, @p2, @p1, @p8, @p9, @p4, @p0, @p6, @p5, @p3])
+                        end
 		end
 end
 

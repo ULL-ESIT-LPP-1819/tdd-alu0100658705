@@ -100,12 +100,12 @@ class Lista
 	def ordenar_for(factor)
 		vector_ordenado = Array.new
 				
-		# Añadimos los elementos de la lista al vector
+		# Añadimos los elementos de la lista al vector para que se pueda reorganizar en el for
 		while @head != nil
 		vector_ordenado.push(@head.value)
                 @head = @head.next
                 end
-	
+		
 		for i in 0..vector_ordenado.length-1
 			for j in 0..(vector_ordenado.length - (2+i))
 				@v1 = vector_ordenado[j].gasto_total(factor[j])
@@ -131,6 +131,7 @@ class Lista
 		vector_ordenado = Array.new
 		vec = Array.new		
 
+		# Añadimos los elementos de la lista a un vector, para poder usar zip con el array de factores
 		while @head != nil
 		vector_lista.push(@head.value)
 		@head = @head.next 
@@ -164,7 +165,24 @@ class Lista
 		return vector_ordenado	
 	end
 
-	def ordenar_sort 
+	def ordenar_sort(factor)
+		
+		vector_ordenado = Array.new
+		vector_lista = Array.new
+
+		# Pasamo el valor de la lista a un array	
+		 while @head != nil
+                	vector_lista.push(@head.value)
+                	@head = @head.next
+                	end
+
+		# Usamos un zip para relacionar a cada individuo con su factor
+		vector_ordenado = vector_lista.zip(factor).sort_by { |a, b| a.gasto_total(b) } # {|x,y| x.gasto_total(y)} <=> b.collect {|x,y| x.gasto_total(y)} }
+
+		# Devolvemos el vector ordenado:
+		vector_ordenado, factor = vector_ordenado.transpose
+
+		return vector_ordenado
 	end		
 
 end
