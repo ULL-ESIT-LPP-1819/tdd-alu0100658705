@@ -19,6 +19,7 @@
 
 ## Práctica 11
 	- Programación Funcional
+	- Benchmarks
 	- Coveralls
 
 ## Installation
