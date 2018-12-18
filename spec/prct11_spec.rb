@@ -87,20 +87,25 @@ RSpec. describe Prct06 do
 			array_menu.collect {|nodo| nodo.Valor_energetico}
 			end	
 	
-
 		end
+
+		Benchmark.bm do |x|
 
 		context"Comprobaciones para ordenar un array de menus por valor energético" do
 			it"Funciona para mostrar el menu ordenado mediante un for" do
-			expect(ordenar_for(@menu)).to eq([@menu6, @menu7, @menu5, @menu3, @menu1, @menu0, @menu8, @menu9, @menu2, @menu4])
-			end
+	       x.report { expect(ordenar_for(@menu)).to eq([@menu6, @menu7, @menu5, @menu3, @menu1, @menu0, @menu8, @menu9, @menu2, @menu4]) }
+			end 
+
 			it"Funciona para moetrar el menu ordenado mediantes un sort" do
-			expect(ordenar_sort(@menu)).to eq([@menu6, @menu7, @menu5, @menu3, @menu1, @menu0, @menu8, @menu9, @menu2, @menu4])
-			end
+	       x.report { expect(ordenar_sort(@menu)).to eq([@menu6, @menu7, @menu5, @menu3, @menu1, @menu0, @menu8, @menu9, @menu2, @menu4]) } 
+			end 
+
 			it"Funciona para mostrar el menu ordenado mediantes un each" do
-                        expect(ordenar_each(@menu)).to eq([@menu6, @menu7, @menu5, @menu3, @menu1, @menu0, @menu8, @menu9, @menu2, @menu4])
-                        end
+               x.report { expect(ordenar_each(@menu)).to eq([@menu6, @menu7, @menu5, @menu3, @menu1, @menu0, @menu8, @menu9, @menu2, @menu4]) }
+                        end 
 		end 
+
+		end
 
 		before :each do
                 @p0=Pacientes.new("Pablo",26,1,70,1.77,[],[],[],[],[],[])
@@ -122,17 +127,18 @@ RSpec. describe Prct06 do
 		@factor_actividad = [0.27, 0.12, 0.12, 0.54, 0.12, 0.27, 0.54, 0.12, 0.12, 0.27]
 		end
 		
-			
+		Benchmark.bm do |x|			
 		context"Comprobaciones para ordenar una lista de valoraciones nutricionales de individuos" do
 			it"Funciona para mostrar la lista de valoraciones nutricionales ordenada mediante un for" do
-			expect(@lista_pacientes.ordenar_for(@factor_actividad)).to eq([@p7, @p2, @p1, @p8, @p9, @p4, @p0, @p6, @p5, @p3])
+	x.report {	expect(@lista_pacientes.ordenar_for(@factor_actividad)).to eq([@p7, @p2, @p1, @p8, @p9, @p4, @p0, @p6, @p5, @p3]) }
 			end
 			it"Funciona para mostrar la lista de valoraciones nutrcionales ordenada mediante un each" do
-			expect(@lista_pacientes.ordenar_each(@factor_actividad)).to eq([@p7, @p2, @p1, @p8, @p9, @p4, @p0, @p6, @p5, @p3])			
+	x.report {	expect(@lista_pacientes.ordenar_each(@factor_actividad)).to eq([@p7, @p2, @p1, @p8, @p9, @p4, @p0, @p6, @p5, @p3]) }			
 			end
 			it"Funciona para mostrar la lista de valoraciones nutrcionales ordenada mediante un sort" do
-                        expect(@lista_pacientes.ordenar_sort(@factor_actividad)).to eq([@p7, @p2, @p1, @p8, @p9, @p4, @p0, @p6, @p5, @p3])
+        x.report {      expect(@lista_pacientes.ordenar_sort(@factor_actividad)).to eq([@p7, @p2, @p1, @p8, @p9, @p4, @p0, @p6, @p5, @p3]) }
                         end
+		end
 		end
 end
 
