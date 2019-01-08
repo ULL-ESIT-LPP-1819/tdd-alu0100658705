@@ -78,16 +78,18 @@ RSpec. describe Prct06 do
 		def ordenar_sort(menu)
 			menu_sort = Array.new 
 			menu_sort = menu.sort { |a, b| a.collect {|nodo| nodo.Valor_energetico}.reduce(:+) <=> b.collect {|nodo| nodo.Valor_energetico }.reduce(:+) }
+			#mostrar(menu_sort)
 		return menu_sort
 		end
 
 		def mostrar(menu)
-		array_each = Array.new
 			menu.each do |array_menu|
-			array_menu.collect {|nodo| nodo.Valor_energetico}
+			array_menu.collect {|nodo| nodo.Valor_energetico}.reduce(:+)
 			end	
 	
 		end
+		
+		
 
 		Benchmark.bm do |x|
 
@@ -102,7 +104,11 @@ RSpec. describe Prct06 do
 
 			it"Funciona para mostrar el menu ordenado mediantes un each" do
                x.report { expect(ordenar_each(@menu)).to eq([@menu6, @menu7, @menu5, @menu3, @menu1, @menu0, @menu8, @menu9, @menu2, @menu4]) }
-                        end 
+                        end
+		  	it"Funciona para mostrar el menu :" do
+               x.report { expect(mostrar(@menu)).to eq([@menu0, @menu1, @menu2, @menu3, @menu4, @menu5, @menu6, @menu7, @menu8, @menu9]) }
+                        end
+ 
 		end 
 
 		end

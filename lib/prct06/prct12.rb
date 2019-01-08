@@ -1,5 +1,5 @@
 class Menu
-  attr_accessor :dia, :tirulo
+  attr_accessor :dia, :titulo
 
   	def initialize(dia,titulo, &block)
     		@dia = dia
@@ -7,7 +7,7 @@ class Menu
 		@comida = []
 
 		@momento = []		
-		@valor_energetico
+		#@valor_energetico
 		@cont = 0
 		@v_total = 0  
 		@tabla= [" ", "grasas", "carbohidratos", "proteínas", "fibra", "sal", "valor energético"]
