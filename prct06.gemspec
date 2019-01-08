@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "prct06/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "prct06"
+  spec.name          = "prct06_alu0100658705"
   spec.version       = Prct06::VERSION
   spec.authors       = ["Pablo Bethencourt"]
   spec.email         = ["alu0100658705@ull.edu.es"]
