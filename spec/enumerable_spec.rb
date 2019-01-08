@@ -20,7 +20,7 @@ end
 		expect(@lista1.collect { |nodo| nodo.to_s }).to be == [@pechuga.to_s,@nutella.to_s,@aceitunas.to_s,@sardinas.to_s,@galletas.to_s]		
 		end
 		it "Comprobando método collect cantidad de azucar" do
-		expect(@lista1.collect { |nodo| nodo.azucares > 20}).to be == [false,true,false,false,true]
+		expect(@lista1.collect { |nodo| nodo.grasa > 20}).to be == [false,true,false,false,true]
 		end
 		it "Método max" do
 		expect(@lista1.max).to eq(@nutella)
